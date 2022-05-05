@@ -2,18 +2,13 @@
   "persons": [
     {
       "name": "Arto Hellas",
-      "number": "1231313",
+      "number": "1231313555",
       "id": 1
     },
     {
       "name": "Ada Lovelace",
-      "number": "39-44-5323523",
+      "number": "1313133",
       "id": 2
-    },
-    {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
-      "id": 3
     },
     {
       "name": "Mary Poppendieck",
@@ -22,8 +17,13 @@
     },
     {
       "name": "Maria Luts",
-      "number": "04002255490",
+      "number": "0445929691",
       "id": 5
+    },
+    {
+      "name": "Engholo",
+      "number": "098",
+      "id": 6
     }
   ]
 }
