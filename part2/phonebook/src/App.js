@@ -54,6 +54,12 @@ const App = () => {
           .then(response => {
             console.log(response)
             setSuccessMessage(`Removed ${persons.filter(person => person.id ===id)[0].name}`)
+            setTimeout( () => {
+              setSuccessMessage(null)
+            }, 2000)
+            setNewName('')
+            setNewNumber('')
+            setNewFilter('')
             setPersons(persons.filter(person => person.id !== id))
             
             
@@ -101,6 +107,9 @@ const App = () => {
               setTimeout(() => {
                 setErrorMessage(null)
               }, 3000)
+              setNewName('')
+              setNewNumber('')
+              setNewFilter('')
             })
            
             
