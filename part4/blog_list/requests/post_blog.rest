@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title":"Vegan food 101",
+    "author":"GaiaGreen",
+    "url":"www.helpearth.com",
+    "likes":10
+}
