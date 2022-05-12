@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title":"Vegan food 101",
-    "author":"GaiaGreen",
-    "url":"www.helpearth.com",
-    "likes":10
+    "title":"Towards data science",
+    "author":"Medium",
+    "url":"www.medium.com",
+    "likes":999
 }
