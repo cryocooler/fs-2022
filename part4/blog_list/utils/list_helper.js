@@ -39,10 +39,17 @@ const mostLikes = (blogs) => {
   return most;
 };
 
+const blogID = (blog) => {
+  const blogid = Object.keys(blog);
+  console.log(blogid);
+  return blogid;
+};
+
 module.exports = {
   dummy,
   totalLikes,
   favoriteBlog,
   mostBlogs,
   mostLikes,
+  blogID,
 };

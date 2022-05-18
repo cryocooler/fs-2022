@@ -64,62 +64,62 @@ const manyBlogs = [
   },
 ];
 
-// test("dummy returns one", () => {
-//   const blogs = [];
+test("dummy returns one", () => {
+  const blogs = [];
 
-//   const result = listHelper.dummy(blogs);
-//   expect(result).toBe(1);
-// });
+  const result = listHelper.dummy(blogs);
+  expect(result).toBe(1);
+});
 
-// describe("totalLikes returns sum of likes", () => {
-//   test("when list has only one blog, equals the likes of that", () => {
-//     const result = listHelper.totalLikes(listWithOneBlog);
-//     expect(result).toBe(5);
-//   });
+describe("totalLikes returns sum of likes", () => {
+  test("when list has only one blog, equals the likes of that", () => {
+    const result = listHelper.totalLikes(listWithOneBlog);
+    expect(result).toBe(5);
+  });
 
-//   test("When list has many blogs, return sum of all likes", () => {
-//     const result = listHelper.totalLikes(manyBlogs);
-//     expect(result).toBe(36);
-//   });
+  test("When list has many blogs, return sum of all likes", () => {
+    const result = listHelper.totalLikes(manyBlogs);
+    expect(result).toBe(36);
+  });
 
-//   test("When list is empty, return 0 likes", () => {
-//     const result = listHelper.totalLikes([]);
-//     expect(result).toBe(0);
-//   });
-// });
+  test("When list is empty, return 0 likes", () => {
+    const result = listHelper.totalLikes([]);
+    expect(result).toBe(0);
+  });
+});
 
-// describe("Favorite blog is the blog with most likes", () => {
-//   test("when list has many blogs, return blog with most likes", () => {
-//     const result = listHelper.favoriteBlog(manyBlogs);
-//     expect(result).toEqual({
-//       _id: "5a422b3a1b54a676234d17f9",
-//       title: "Canonical string reduction",
-//       author: "Edsger W. Dijkstra",
-//       url: "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
-//       likes: 12,
-//       __v: 0,
-//     });
-//   });
+describe("Favorite blog is the blog with most likes", () => {
+  test("when list has many blogs, return blog with most likes", () => {
+    const result = listHelper.favoriteBlog(manyBlogs);
+    expect(result).toEqual({
+      _id: "5a422b3a1b54a676234d17f9",
+      title: "Canonical string reduction",
+      author: "Edsger W. Dijkstra",
+      url: "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
+      likes: 12,
+      __v: 0,
+    });
+  });
 
-//   test("When list has one blog, return the blog", () => {
-//     const result = listHelper.favoriteBlog(listWithOneBlog);
-//     expect(result).toEqual({
-//       _id: "5a422aa71b54a676234d17f8",
-//       title: "Go To Statement Considered Harmful",
-//       author: "Edsger W. Dijkstra",
-//       url: "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
-//       likes: 5,
-//       __v: 0,
-//     });
-//   });
-//   test("When list is empty, return null", () => {
-//     const result = listHelper.favoriteBlog([]);
-//     expect(result).toEqual([]);
-//   });
-// });
+  test("When list has one blog, return the blog", () => {
+    const result = listHelper.favoriteBlog(listWithOneBlog);
+    expect(result).toEqual({
+      _id: "5a422aa71b54a676234d17f8",
+      title: "Go To Statement Considered Harmful",
+      author: "Edsger W. Dijkstra",
+      url: "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+      likes: 5,
+      __v: 0,
+    });
+  });
+  test("When list is empty, return null", () => {
+    const result = listHelper.favoriteBlog([]);
+    expect(result).toEqual([]);
+  });
+});
 
 //console.log(_.find(manyBlogs2, { likes: listHelper.favoriteBlog(manyBlogs2) }));
 
-console.log(listHelper.mostBlogs(manyBlogs));
-console.log(listHelper.mostLikes(manyBlogs));
+// console.log(listHelper.mostBlogs(manyBlogs));
+// console.log(listHelper.mostLikes(manyBlogs));
 //console.log(Object.values(manyBlogs));
