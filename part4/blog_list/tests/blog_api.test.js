@@ -57,6 +57,21 @@ test("unique identifier is ID", async () => {
   expect(Object.keys(response.body[0])[4]).toBe("id");
 });
 
+test("A new blog can be succesfully created", async () => {
+  const newBlog = {
+    title: "tickle your fancy",
+    author: "Sara vanninen",
+    url: "https://tickleyourfancy.blogspot.com",
+    likes: 50000,
+  };
+
+  await api.post("/api/blogs").send(newBlog).expect(201);
+
+  const response = await api.get("/api/blogs");
+  const count = response.body.map((r) => r.id);
+  expect(response.body).toHaveLength(initialBlogs.length + 1);
+});
+
 afterAll(() => {
   mongoose.connection.close();
 });
