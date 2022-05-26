@@ -2,8 +2,10 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title":"Towards data science",
-    "author":"Medium",
-    "url":"www.medium.com",
+    "title": "K-means clustering",
+    "author": "Komodo",
+    "url": "www.mlops.com",
     "likes":999
+
+
 }

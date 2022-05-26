@@ -42,6 +42,8 @@ describe("when db is initialized with 1 user", () => {
 
 describe("invalid user input is rejected when", () => {
   test("username is too short", async () => {
+    const usersAtStart = await helper.usersInDb();
+
     const newUser = {
       username: "ao",
       name: "whelp",
@@ -50,9 +52,14 @@ describe("invalid user input is rejected when", () => {
     await api.post("/api/users").send(newUser).expect(400);
     const msg = await api.post("/api/users").send(newUser);
     expect(msg.text).toContain("username must be min 3 characters in length");
+    const usersAtEnd = await helper.usersInDb();
+
+    expect(usersAtEnd).toEqual(usersAtStart);
   }, 10000);
 
   test("password is too short", async () => {
+    const usersAtStart = await helper.usersInDb();
+
     const newUser = {
       username: "Plank",
       name: "Charlton",
@@ -61,9 +68,14 @@ describe("invalid user input is rejected when", () => {
     await api.post("/api/users").send(newUser).expect(400);
     const msg = await api.post("/api/users").send(newUser);
     expect(msg.text).toContain("password must be min 3 characters in length");
+    const usersAtEnd = await helper.usersInDb();
+
+    expect(usersAtEnd).toEqual(usersAtStart);
   }, 10000);
 
   test("password is undefined", async () => {
+    const usersAtStart = await helper.usersInDb();
+
     const newUser = {
       username: "Plank",
       name: "Charlton",
@@ -71,9 +83,14 @@ describe("invalid user input is rejected when", () => {
     await api.post("/api/users").send(newUser).expect(400);
     const msg = await api.post("/api/users").send(newUser);
     expect(msg.text).toContain("password is required");
+    const usersAtEnd = await helper.usersInDb();
+
+    expect(usersAtEnd).toEqual(usersAtStart);
   }, 10000);
 
   test("username is undefined", async () => {
+    const usersAtStart = await helper.usersInDb();
+
     const newUser = {
       name: "Charlton",
       password: "gammaray",
@@ -81,9 +98,14 @@ describe("invalid user input is rejected when", () => {
     await api.post("/api/users").send(newUser).expect(400);
     const msg = await api.post("/api/users").send(newUser);
     expect(msg.text).toContain("username is required");
+    const usersAtEnd = await helper.usersInDb();
+
+    expect(usersAtEnd).toEqual(usersAtStart);
   }, 10000);
 
   test("username already exists in database", async () => {
+    const usersAtStart = await helper.usersInDb();
+
     const newUser = {
       username: "root",
       name: "Charlton",
@@ -92,5 +114,7 @@ describe("invalid user input is rejected when", () => {
     await api.post("/api/users").send(newUser).expect(400);
     const msg = await api.post("/api/users").send(newUser);
     expect(msg.text).toContain("username must be unique");
+    const usersAtEnd = await helper.usersInDb();
+    expect(usersAtEnd).toEqual(usersAtStart);
   }, 10000);
 });

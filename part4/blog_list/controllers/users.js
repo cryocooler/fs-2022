@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const blog = require("../models/blog");
 const usersRouter = require("express").Router();
 const User = require("../models/user");
+const Blog = require("../models/blog");
 
 usersRouter.post("/", async (request, response) => {
   const { username, name, password } = request.body;
@@ -42,7 +43,7 @@ usersRouter.post("/", async (request, response) => {
 });
 
 usersRouter.get("/", async (request, response) => {
-  const users = await User.find({});
+  const users = await User.find({}).populate("blogs");
   response.json(users);
 });
 
