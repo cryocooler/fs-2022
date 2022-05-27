@@ -8,14 +8,18 @@ blogsRouter.get("/", async (request, response) => {
 });
 
 blogsRouter.get("/:id", async (request, response) => {
-  Blog.findById(request.params.id);
-  response.json();
+  const blog = await Blog.findById(request.params.id);
+  response.json(blog);
 });
 
 blogsRouter.post("/", async (request, response) => {
   const body = request.body;
-  let user = await User.find({});
-  user = user[0];
+  const token = request.token;
+  if (!token) {
+    return response.status(401).json({ error: "No token provided" });
+  }
+  //console.log("PICKED TOCKEN", request.token);
+  const user = request.user;
 
   const blog = new Blog({
     title: body.title,
@@ -32,8 +36,31 @@ blogsRouter.post("/", async (request, response) => {
 });
 
 blogsRouter.delete("/:id", async (request, response) => {
+  const blogToDelete = await Blog.findById(request.params.id);
+  //console.log("blog to delete", blogToDelete);
+  if (!blogToDelete) {
+    console.log("blog doesnt exist");
+    return response.status(400).json({ error: "blog does not exist" });
+  }
+  // console.log("request user", request.user);
+  //console.log("blog user", blogToDelete.user);
+  //console.log("blogtodelete", blogToDelete.user.toString());
+  if (!request.user || !blogToDelete.user) {
+    console.log("undefined users");
+    return response.status(400).json({ error: "undefined user" });
+  }
+  console.log(request.user._id);
+  if (request.user._id.toString() !== blogToDelete.user.toString()) {
+    console.log("different user trying to delete");
+    return response.status(401).json({ error: "unauthorized deletion" });
+  }
+
   await Blog.findByIdAndDelete(request.params.id);
   response.status(204).end();
+  // I can get the token passed in the request. Then I can find the user corresponding to the token.
+  // if the found user's id is not equivalent to the blog creator's id, return 400
+
+  //await Blog.findByIdAndDelete(request.params.id);
 });
 
 blogsRouter.put("/:id", async (request, response) => {

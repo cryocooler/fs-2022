@@ -5,9 +5,27 @@ const api = supertest(app);
 const Blog = require("../models/blog");
 const listHelper = require("../utils/list_helper");
 const helper = require("../tests/test_helper");
+const User = require("../models/user");
+const { set } = require("lodash");
+let token = "";
 
 beforeEach(async () => {
+  await User.deleteMany({});
   await Blog.deleteMany({});
+  const newUser = {
+    username: "testUser",
+    name: "Tester",
+    password: "testing",
+  };
+  await api.post("/api/users").send(newUser);
+
+  const newToken = await api
+    .post("/api/login")
+    .send({ username: "testUser", password: "testing" });
+
+  token = newToken.body.token;
+  //console.log("TOKEN IS", token);
+
   let blogObject = new Blog(helper.initialBlogs[0]);
   await blogObject.save();
   blogObject = new Blog(helper.initialBlogs[1]);
@@ -40,6 +58,7 @@ describe("tests for get and post end points", () => {
   });
 
   test("a new blog can be succesfully created", async () => {
+    //console.log("TOKEN passed", token);
     const newBlog = {
       title: "tickle your fancy",
       author: "Sara vanninen",
@@ -47,7 +66,11 @@ describe("tests for get and post end points", () => {
       likes: 50000,
     };
 
-    await api.post("/api/blogs").send(newBlog).expect(201);
+    await api
+      .post("/api/blogs")
+      .send(newBlog)
+      .set("Authorization", `Bearer ${token}`)
+      .expect(201);
 
     const response = await api.get("/api/blogs");
     const count = response.body.map((r) => r.id);
@@ -61,7 +84,11 @@ describe("tests for get and post end points", () => {
       url: "https://tickleyourfancy.blogspot.com",
     };
 
-    await await api.post("/api/blogs").send(newBlog).expect(201);
+    await api
+      .post("/api/blogs")
+      .send(newBlog)
+      .set("Authorization", `Bearer ${token}`)
+      .expect(201);
 
     const res = await api.get("/api/blogs");
     const length = res.body.length;
@@ -76,24 +103,59 @@ describe("tests for get and post end points", () => {
       title: "tickle your fancy",
     };
 
-    await api.post("/api/blogs").send(newBlog).expect(400);
+    await api
+      .post("/api/blogs")
+      .send(newBlog)
+      .set("Authorization", `Bearer ${token}`)
+      .expect(400);
   }, 10000);
+
+  test("adding fails with code 401 if no token is provided", async () => {
+    const newBlog = {
+      title: "tickle your fancy",
+    };
+
+    await api
+      .post("/api/blogs")
+      .send(newBlog)
+      .set("Authorization", `Bearer ${token}`)
+      .expect(400);
+  });
 });
 
 describe("tests for delete endpoint", () => {
   test("succeeds with status code 204 if id is valid", async () => {
-    const dbBlogs = await helper.blogsInDb();
-    console.log(dbBlogs);
+    const blogsAtStart = await helper.blogsInDb();
 
-    const blogToDelete = dbBlogs[0];
-    console.log("blog id for deletion", blogToDelete);
-    await api.delete(`/api/blogs/${blogToDelete.id}`).expect(204);
+    const newBlog = {
+      title: "tickle your fancy",
+      author: "Sara vanninen",
+      url: "https://tickleyourfancy.blogspot.com",
+    };
+
+    await api
+      .post("/api/blogs")
+      .send(newBlog)
+      .set("Authorization", `Bearer ${token}`);
+
+    const currentBlogs = await helper.blogsInDb();
+    console.log("CURRENT BLOGS", currentBlogs);
+    const blogToDelete = await Blog.findOne({ title: newBlog.title });
+    console.log("DEL id", blogToDelete.id);
+
+    await api
+      .delete(`/api/blogs/${blogToDelete.id}`)
+      .set("Authorization", `Bearer ${token}`)
+      .expect(204);
     const blogsAfterDelete = await helper.blogsInDb();
-    expect(blogsAfterDelete).toHaveLength(helper.initialBlogs.length - 1);
+    expect(blogsAfterDelete).toHaveLength(helper.initialBlogs.length);
   });
-  test("fails with 204 if id is invalid", async () => {
+  test("fails with 400 if id is invalid", async () => {
     const badId = "axadasdasdas";
-    await api.delete(`/api/blogs/${badId}`).expect(204);
+    await api
+      .delete(`/api/blogs/${badId}`)
+      .set("Authorization", `Bearer ${token}`)
+      .expect(400);
   });
 });
 describe("updating blog information", () => {
