@@ -5,6 +5,42 @@ import loginService from "./services/login";
 import ErrorNotification from "./components/ErrorNotification";
 import SuccessNotification from "./components/SuccessNotification";
 
+const BlogForm = ({
+  handleSubmit,
+  handleTitleChange,
+  handleAuthorChange,
+  handleUrlChange,
+  title,
+  author,
+  url,
+}) => (
+  <form onSubmit={handleSubmit}>
+    <div>
+      title:
+      <input
+        type="text"
+        value={title}
+        name="title"
+        onChange={handleTitleChange}
+      />
+    </div>
+    <div>
+      author:
+      <input
+        type="text"
+        value={author}
+        name="author"
+        onChange={handleAuthorChange}
+      />
+    </div>
+    <div>
+      url:
+      <input type="text" value={url} name="url" onChange={handleUrlChange} />
+    </div>
+    <button type="submit">create</button>
+  </form>
+);
+
 const App = () => {
   const [blogs, setBlogs] = useState([]);
   const [username, setUsername] = useState("");
@@ -12,9 +48,11 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [succesMessage, setSuccessMessage] = useState(null);
-  const [newTitle, setNewTitle] = useState("");
-  const [newAuthor, setNewAuthor] = useState("");
-  const [newUrl, setNewUrl] = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [url, setUrl] = useState("");
+  const [blogAdditionVisible, setBlogAdditionVisible] = useState(false);
+  const [detaislVisible, setDetailsVisible] = useState(false);
 
   const addBlog = async (event) => {
     console.log("TRYING TO ADD BLOG");
@@ -22,11 +60,15 @@ const App = () => {
 
     try {
       const newBlog = await blogService.create({
-        title: newTitle,
-        author: newAuthor,
-        url: newUrl,
+        title: title,
+        author: author,
+        url: url,
       });
       setBlogs(blogs.concat(newBlog));
+      setTitle("");
+      setAuthor("");
+      setUrl("");
+      setBlogAdditionVisible(false);
       setSuccessMessage(
         `a new blog ${newBlog.title} by ${newBlog.author} was added`
       );
@@ -67,10 +109,6 @@ const App = () => {
     }
   };
 
-  const handleTitleChange = (event) => {
-    setNewTitle(event.target.value);
-  };
-
   const loginForm = () => (
     <form onSubmit={handleLogin}>
       <div>
@@ -95,38 +133,32 @@ const App = () => {
     </form>
   );
 
-  const blogForm = () => (
-    <form onSubmit={addBlog}>
+  const blogForm = () => {
+    const hideWhenVisible = { display: blogAdditionVisible ? "none" : "" };
+    const showWhenVisible = { display: blogAdditionVisible ? "" : "none" };
+
+    return (
       <div>
-        title:
-        <input
-          type="text"
-          value={newTitle}
-          name="title"
-          onChange={({ target }) => setNewTitle(target.value)}
-        />
+        <div style={hideWhenVisible}>
+          <button onClick={() => setBlogAdditionVisible(true)}>
+            create new blog
+          </button>
+        </div>
+        <div style={showWhenVisible}>
+          <BlogForm
+            title={title}
+            author={author}
+            url={url}
+            handleAuthorChange={({ target }) => setAuthor(target.value)}
+            handleTitleChange={({ target }) => setTitle(target.value)}
+            handleUrlChange={({ target }) => setUrl(target.value)}
+            handleSubmit={addBlog}
+          />
+          <button onClick={() => setBlogAdditionVisible(false)}>cancel</button>
+        </div>
       </div>
-      <div>
-        author:
-        <input
-          type="text"
-          value={newAuthor}
-          name="author"
-          onChange={({ target }) => setNewAuthor(target.value)}
-        />
-      </div>
-      <div>
-        url:
-        <input
-          type="text"
-          value={newUrl}
-          name="url"
-          onChange={({ target }) => setNewUrl(target.value)}
-        />
-      </div>
-      <button type="submit">create</button>
-    </form>
-  );
+    );
+  };
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedBlogappUser");
