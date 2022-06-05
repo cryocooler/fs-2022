@@ -1,45 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Blog from "./components/Blog";
 import blogService from "./services/blogs";
 import loginService from "./services/login";
 import ErrorNotification from "./components/ErrorNotification";
 import SuccessNotification from "./components/SuccessNotification";
-
-const BlogForm = ({
-  handleSubmit,
-  handleTitleChange,
-  handleAuthorChange,
-  handleUrlChange,
-  title,
-  author,
-  url,
-}) => (
-  <form onSubmit={handleSubmit}>
-    <div>
-      title:
-      <input
-        type="text"
-        value={title}
-        name="title"
-        onChange={handleTitleChange}
-      />
-    </div>
-    <div>
-      author:
-      <input
-        type="text"
-        value={author}
-        name="author"
-        onChange={handleAuthorChange}
-      />
-    </div>
-    <div>
-      url:
-      <input type="text" value={url} name="url" onChange={handleUrlChange} />
-    </div>
-    <button type="submit">create</button>
-  </form>
-);
+import BlogForm from "./components/BlogForm";
+import Togglable from "./components/Togglable";
 
 const App = () => {
   const [blogs, setBlogs] = useState([]);
@@ -48,27 +14,12 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [succesMessage, setSuccessMessage] = useState(null);
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [url, setUrl] = useState("");
-  const [blogAdditionVisible, setBlogAdditionVisible] = useState(false);
-  const [detaislVisible, setDetailsVisible] = useState(false);
 
-  const addBlog = async (event) => {
-    console.log("TRYING TO ADD BLOG");
-    event.preventDefault();
-
+  const addBlog = async (blogObject) => {
     try {
-      const newBlog = await blogService.create({
-        title: title,
-        author: author,
-        url: url,
-      });
+      const newBlog = await blogService.create(blogObject);
+      blogFormRef.current.toggleVisibility();
       setBlogs(blogs.concat(newBlog));
-      setTitle("");
-      setAuthor("");
-      setUrl("");
-      setBlogAdditionVisible(false);
       setSuccessMessage(
         `a new blog ${newBlog.title} by ${newBlog.author} was added`
       );
@@ -80,6 +31,24 @@ const App = () => {
       setTimeout(() => {
         setErrorMessage(null);
       }, 5000);
+    }
+  };
+
+  const removeBlog = async (blogObject) => {
+    console.log("logged in user", user);
+    console.log("Blog user", blogObject.user.name);
+    console.log(
+      "is logged in user equivalent to blog user?",
+      user.username === blogObject.user.username
+    );
+    if (
+      window.confirm(`Remove blog ${blogObject.title} by ${blogObject.author}`)
+    ) {
+      console.log(`removing blog with ID ${blogObject.id}`);
+      try {
+        const blogToDelete = await blogService.remove(blogObject);
+        setBlogs(blogs.filter((blog) => blog.id !== blogObject.id));
+      } catch (exception) {}
     }
   };
 
@@ -133,32 +102,24 @@ const App = () => {
     </form>
   );
 
-  const blogForm = () => {
-    const hideWhenVisible = { display: blogAdditionVisible ? "none" : "" };
-    const showWhenVisible = { display: blogAdditionVisible ? "" : "none" };
-
-    return (
-      <div>
-        <div style={hideWhenVisible}>
-          <button onClick={() => setBlogAdditionVisible(true)}>
-            create new blog
-          </button>
-        </div>
-        <div style={showWhenVisible}>
-          <BlogForm
-            title={title}
-            author={author}
-            url={url}
-            handleAuthorChange={({ target }) => setAuthor(target.value)}
-            handleTitleChange={({ target }) => setTitle(target.value)}
-            handleUrlChange={({ target }) => setUrl(target.value)}
-            handleSubmit={addBlog}
-          />
-          <button onClick={() => setBlogAdditionVisible(false)}>cancel</button>
-        </div>
-      </div>
-    );
+  const updateBlog = async (blogObject) => {
+    console.log("trigger api call");
+    console.log(`passed blog ${blogObject}`);
+    try {
+      const updatedBlog = await blogService.update(blogObject);
+      setBlogs(blogs.map((b) => (b.id !== blogObject.id ? b : blogObject)));
+      return updatedBlog;
+      // update blogs with updatedBlog
+    } catch (exception) {}
   };
+
+  const blogFormRef = useRef();
+
+  const blogForm = () => (
+    <Togglable buttonLabel="new blog" ref={blogFormRef}>
+      <BlogForm createBlog={addBlog} />
+    </Togglable>
+  );
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedBlogappUser");
@@ -190,11 +151,20 @@ const App = () => {
           >
             logout
           </button>
-          <h2>create new</h2>
           {blogForm()}
-          {blogs.map((blog) => (
-            <Blog key={blog.id} blog={blog} />
-          ))}
+          {blogs
+            .sort(function (a, b) {
+              return b.likes - a.likes;
+            })
+            .map((blog) => (
+              <Blog
+                key={blog.id}
+                blog={blog}
+                updateBlog={updateBlog}
+                removeBlog={removeBlog}
+                currentUser={user}
+              />
+            ))}
         </div>
       )}
     </div>
