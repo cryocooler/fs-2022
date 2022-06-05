@@ -116,7 +116,7 @@ const App = () => {
   const blogFormRef = useRef();
 
   const blogForm = () => (
-    <Togglable buttonLabel="new blog" ref={blogFormRef}>
+    <Togglable buttonLabel="create new blog" ref={blogFormRef}>
       <BlogForm createBlog={addBlog} />
     </Togglable>
   );
@@ -142,7 +142,7 @@ const App = () => {
         loginForm()
       ) : (
         <div>
-          {user.name} is logged in
+          {user.name} is logged in{" "}
           <button
             onClick={() => {
               setUser(null);
