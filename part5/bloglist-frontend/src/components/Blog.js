@@ -3,9 +3,7 @@ import { useState } from "react";
 const Blog = ({ blog, updateBlog, removeBlog, currentUser }) => {
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [likes, setLikes] = useState("");
-  const [deleteVisible, setDeleteVisible] = useState(false);
 
-  const hideWhenVisible = { display: detailsVisible ? "none" : "" };
   const showWhenVisible = { display: detailsVisible ? "" : "none" };
 
   const toggleVisibility = () => {
@@ -17,7 +15,7 @@ const Blog = ({ blog, updateBlog, removeBlog, currentUser }) => {
     console.log(`updating likes for ${blog.id}`);
     const blogToUpdate = { ...blog, likes: blog.likes + 1 };
     updateBlog(blogToUpdate);
-    setLikes(blog.likes + 1);
+    setLikes(likes + 1);
   };
 
   const blogStyle = {

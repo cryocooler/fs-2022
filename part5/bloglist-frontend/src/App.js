@@ -47,8 +47,11 @@ const App = () => {
       console.log(`removing blog with ID ${blogObject.id}`);
       try {
         const blogToDelete = await blogService.remove(blogObject);
+        console.log(blogToDelete.response.data);
         setBlogs(blogs.filter((blog) => blog.id !== blogObject.id));
-      } catch (exception) {}
+      } catch (exception) {
+        console.log("error");
+      }
     }
   };
 
@@ -110,7 +113,9 @@ const App = () => {
       setBlogs(blogs.map((b) => (b.id !== blogObject.id ? b : blogObject)));
       return updatedBlog;
       // update blogs with updatedBlog
-    } catch (exception) {}
+    } catch (exception) {
+      console.log("error");
+    }
   };
 
   const blogFormRef = useRef();
