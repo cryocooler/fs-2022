@@ -1,3 +1,5 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const anecdotesAtStart = [
   "If it hurts, do it more often",
   "Adding manpower to a late software project makes it later!",
@@ -19,12 +21,16 @@ const asObject = (anecdote) => {
 
 const initialState = anecdotesAtStart.map(asObject);
 
-const reducer = (state = initialState, action) => {
-  console.log("state now: ", state);
-  console.log("action", action);
-  switch (action.type) {
-    case "VOTE": {
-      const id = action.data.id;
+const anecdoteSlice = createSlice({
+  name: "anecdotes",
+  initialState,
+  reducers: {
+    createAnecdote(state, action) {
+      const anecdote = action.payload;
+      state.push({ anecdote, votes: 0, id: getId() });
+    },
+    addVote(state, action) {
+      const id = action.payload;
       const anecdoteToVote = state.find((a) => a.id === id);
       const votedAnecdote = {
         ...anecdoteToVote,
@@ -33,31 +39,43 @@ const reducer = (state = initialState, action) => {
       return state.map((anecdote) =>
         anecdote.id !== id ? anecdote : votedAnecdote
       );
-    }
-    case "NEW_ANECDOTE": {
-      return state.concat(action.data);
-    }
-    default:
-      return state;
-  }
-};
-
-export const createAnecdote = (anecdote) => {
-  return {
-    type: "NEW_ANECDOTE",
-    data: {
-      content: anecdote,
-      votes: 0,
-      id: getId(),
     },
-  };
-};
+  },
+});
 
-export const addVote = (id) => {
-  return {
-    type: "VOTE",
-    data: { id },
-  };
-};
+// const reducer = (state = initialState, action) => {
+//   console.log("state now: ", state);
+//   console.log("action", action);
+//   switch (action.type) {
+//     case "VOTE": {
+//       const id = action.data.id;
+//       const anecdoteToVote = state.find((a) => a.id === id);
+//       const votedAnecdote = {
+//         ...anecdoteToVote,
+//         votes: anecdoteToVote.votes + 1,
+//       };
+//       return state.map((anecdote) =>
+//         anecdote.id !== id ? anecdote : votedAnecdote
+//       );
+//     }
+//     case "NEW_ANECDOTE": {
+//       return state.concat(action.data);
+//     }
+//     default:
+//       return state;
+//   }
+// };
 
-export default reducer;
+export const notifSlice = createSlice({
+  name: "notifications",
+  initState: "WELCOME",
+  reducers: {
+    setNotification(initState, action) {
+      const state = initState;
+      return state;
+    },
+  },
+});
+
+export const { createAnecdote, addVote } = anecdoteSlice.actions;
+export default anecdoteSlice.reducer;

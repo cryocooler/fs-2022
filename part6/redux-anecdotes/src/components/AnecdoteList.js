@@ -6,7 +6,7 @@ const Anecdote = ({ anecdote, handleClick }) => {
     <>
       <div>{anecdote.content}</div>
       <div>
-        has {anecdote.votes}
+        has {anecdote.votes} votes
         <button onClick={handleClick}>vote</button>
       </div>
     </>
@@ -14,13 +14,12 @@ const Anecdote = ({ anecdote, handleClick }) => {
 };
 
 const Anecdotes = () => {
-  const anecdotes = useSelector((state) => state);
+  const anecdotes = useSelector((state) => state.anecdotes);
   const dispatch = useDispatch();
 
   return (
     <div>
-      <h2>Anecdotes</h2>
-      {anecdotes
+      {[...anecdotes]
         .sort(function (a, b) {
           return b.votes - a.votes;
         })
