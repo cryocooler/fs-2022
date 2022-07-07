@@ -27,7 +27,8 @@ const anecdoteSlice = createSlice({
   reducers: {
     createAnecdote(state, action) {
       const anecdote = action.payload;
-      state.push({ anecdote, votes: 0, id: getId() });
+      state.push({ content: anecdote, votes: 0, id: getId() });
+      console.log("anecdote", anecdote);
     },
     addVote(state, action) {
       const id = action.payload;
@@ -65,17 +66,6 @@ const anecdoteSlice = createSlice({
 //       return state;
 //   }
 // };
-
-export const notifSlice = createSlice({
-  name: "notifications",
-  initState: "WELCOME",
-  reducers: {
-    setNotification(initState, action) {
-      const state = initState;
-      return state;
-    },
-  },
-});
 
 export const { createAnecdote, addVote } = anecdoteSlice.actions;
 export default anecdoteSlice.reducer;
