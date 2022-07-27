@@ -14,12 +14,17 @@ const notifSlice = createSlice({
   },
 });
 
+let timeoutID = null;
+
 export const createNotification = (message, time) => {
   console.log("triggered");
   return (dispatch) => {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
     console.log(message);
     dispatch(setNotification(message));
-    setTimeout(() => dispatch(setNotification("")), time * 1000);
+    timeoutID = setTimeout(() => dispatch(setNotification("")), time * 1000);
   };
 };
 
