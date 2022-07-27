@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3005/anecdotes";
+const baseUrl = "http://localhost:3001/anecdotes";
 
 const getAll = async () => {
   const response = await axios.get(baseUrl);
@@ -14,10 +14,13 @@ const createNew = async (content) => {
 };
 
 const update = async (updateObject) => {
+  console.log("updating", updateObject);
+  const incrementedVote = { ...updateObject, votes: updateObject.votes + 1 };
   const response = await axios.put(
     `${baseUrl}/${updateObject.id}`,
-    updateObject
+    incrementedVote
   );
+  console.log("resp", response);
   return response.data;
 };
 
