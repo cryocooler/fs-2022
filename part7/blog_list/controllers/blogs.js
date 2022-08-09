@@ -74,6 +74,16 @@ blogsRouter.put("/:id", async (request, response) => {
   response.status(204).end();
 });
 
+blogsRouter.put("/:id/comments", async (request, response) => {
+  //console.log("request", request.body);
+  const body = request.body;
+  const blog = {
+    comments: body.comments,
+  };
+  await Blog.findByIdAndUpdate(request.params.id, blog, { new: true });
+  response.status(204).end();
+});
+
 //   blog.save().then((result) => {
 //     response.status(201).json(result);
 //   });

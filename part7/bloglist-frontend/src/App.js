@@ -1,19 +1,24 @@
-//import Blog from "./components/Blog";
+import Blog from "./components/Blog";
+import { Container, Typography } from "@mui/material";
+
 //import blogService from "./services/blogs";
 //import loginService from "./services/login";
-import userService from "./services/users";
 import Notification from "./components/Notification";
 import LoginForm from "./components/LoginForm";
 import BlogForm from "./components/BlogForm";
 import Togglable from "./components/Togglable";
+import User from "./components/User";
 import Users from "./components/Users";
 import BlogList from "./components/BlogList";
+import Menu from "./components/Menu";
+import blogService from "./services/blogs";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //import { createNotification } from "./reducers/notificationReducer";
 import { createBlog, initializeBlogs } from "./reducers/blogReducer";
+import { initializeUsers } from "./reducers/userReducer";
 
 //import { logOutUser } from "./reducers/userReducer";
 
@@ -21,7 +26,9 @@ const App = () => {
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state.blogs);
   const users = useSelector((state) => state.users);
-  const [blogUsers, setBlogUsers] = useState([]);
+  const loggedUser = useSelector((state) => state.login);
+
+  console.log("current user state", loggedUser);
 
   useEffect(() => {
     //console.log("hook fired setting blogs");
@@ -29,8 +36,16 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    userService.getAll().then((blogUsers) => setBlogUsers(blogUsers));
-  }, []);
+    dispatch(initializeUsers());
+  }, [dispatch]);
+
+  useEffect(() => {
+    const token = loggedUser ? loggedUser.token : null;
+
+    blogService.setToken(token);
+  }, [loggedUser]);
+
+  //console.log("current user", users);
 
   // useEffect(() => {
   //   dispatch(initializeUser());
@@ -97,33 +112,50 @@ const App = () => {
   const blogFormRef = useRef();
 
   const blogForm = () => (
-    <Togglable buttonLabel="create new blog" ref={blogFormRef}>
-      <BlogForm createBlog={addBlog} />
+    <Togglable
+      buttonLabel="create new blog"
+      Label="Create new"
+      ref={blogFormRef}
+    >
+      <BlogForm createBlog={addBlog} user={loggedUser} />
     </Togglable>
   );
 
   return (
-    <div>
-      <h2>blogs</h2>
-      <Notification />
-      <LoginForm />
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              users === null ? null : (
-                <div>
-                  {blogForm()}
-                  <BlogList user={users} blogs={blogs} />
-                </div>
-              )
-            }
-          />
-          <Route path="/users" element={<Users users={blogUsers} />} />
-        </Routes>
-      </Router>
-    </div>
+    <Container>
+      <div>
+        <Router>
+          <Menu />
+          <br></br>
+          <Typography variant="h4" margin="normal">
+            Blog app
+          </Typography>
+          <br></br>
+          <Notification />
+          <LoginForm />
+          <br></br>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                loggedUser === null ? null : (
+                  <div>
+                    {blogForm()}
+                    <BlogList user={loggedUser} blogs={blogs} />
+                  </div>
+                )
+              }
+            />
+            <Route path="/users" element={<Users />} />
+            <Route
+              path="/users/:id"
+              element={<User users={users} blogs={blogs} />}
+            />
+            <Route path="/blogs/:id" element={<Blog blogs={blogs}></Blog>} />
+          </Routes>
+        </Router>
+      </div>
+    </Container>
   );
 };
 // {blogs.map((blog) => (

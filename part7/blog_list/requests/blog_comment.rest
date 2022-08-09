@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/62e7f4df76a7825118c94ffe/comments
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZlbG9jaXR5IiwiaWQiOiI2MjhmOTYyOTYwMDk0MzExYTBhNDI0NDkiLCJpYXQiOjE2NTM1Nzc0NzJ9.kkhNrf0DTZWiQRwt9djpOj0EAxwcHBGKXUy8_MIbO7o
+
+{
+  "comments": ["haha", "what", "is", "this"]
+
+
+}

@@ -26,10 +26,22 @@ const blogSlice = createSlice({
       };
       return state.map((blog) => (blog.id !== id ? blog : tempBlog));
     },
+    // commentBlog(state, action) {
+    //   console.log("reducer action", action);
+    //   const id = action.payload.id;
+    //   console.log("id", id);
+    //   const blogToComment = state.find((b) => b.id === id);
+    //   const tempBlog = {
+    //     ...blogToComment,
+    //     comments: blogToComment.comments.concat(action.payload.comment),
+    //   };
+    //   return state.map((blog) => (blog.id !== id ? blog : tempBlog));
+    // },
   },
 });
 
-export const { appendBlog, setBlogs, deleteBlog, likeBlog } = blogSlice.actions;
+export const { appendBlog, setBlogs, deleteBlog, likeBlog, commentBlog } =
+  blogSlice.actions;
 export default blogSlice.reducer;
 
 export const initializeBlogs = () => {
@@ -40,10 +52,15 @@ export const initializeBlogs = () => {
   };
 };
 export const createBlog = (blogObject) => {
+  console.log("reducer creating", blogObject);
   return async (dispatch) => {
     try {
-      const newBlog = await blogService.create(blogObject);
-      dispatch(appendBlog(newBlog));
+      await blogService.create(blogObject);
+      const blogs = await blogService.getAll();
+      dispatch(setBlogs(blogs));
+      dispatch(
+        createNotification(`added blog ${blogObject.title}`, 3, "success")
+      );
     } catch (error) {
       dispatch(createNotification("Failed to create blog", 3, "error"));
     }
@@ -54,6 +71,17 @@ export const addLike = (blogObject) => {
   return async (dispatch) => {
     const updateBlog = await blogService.update(blogObject);
     dispatch(likeBlog(blogObject));
+    return updateBlog;
+  };
+};
+
+export const addComment = (blogObject, comment) => {
+  // console.log("reducer blogobject", blogObject);
+  // console.log("reducer", comment);
+  return async (dispatch) => {
+    const updateBlog = await blogService.updateComment(blogObject, comment);
+    const blogs = await blogService.getAll();
+    dispatch(setBlogs(blogs));
     return updateBlog;
   };
 };

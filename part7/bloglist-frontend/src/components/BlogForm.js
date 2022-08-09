@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
+import { TextField, Button } from "@mui/material";
 
-const BlogForm = ({ user, createBlog }) => {
+const BlogForm = ({ createBlog }) => {
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const user = useSelector((state) => state.login);
 
   const addBlog = async (event) => {
-    console.log("TRYING TO ADD BLOG");
+    //console.log("TRYING TO ADD BLOG");
     event.preventDefault();
     const newBlog = {
       author: author,
@@ -24,12 +27,12 @@ const BlogForm = ({ user, createBlog }) => {
   if (user) {
     return (
       <div className="FormDiv">
-        <h2>create new blog</h2>
         <form onSubmit={addBlog}>
           <div>
-            title:
-            <input
+            <TextField
+              size="small"
               type="text"
+              label="Title"
               value={title}
               name="title"
               onChange={({ target }) => setTitle(target.value)}
@@ -38,10 +41,11 @@ const BlogForm = ({ user, createBlog }) => {
             />
           </div>
           <div>
-            author:
-            <input
+            <TextField
+              size="small"
               type="text"
               value={author}
+              label="Author"
               name="author"
               onChange={({ target }) => setAuthor(target.value)}
               placeholder="write here author text"
@@ -49,9 +53,10 @@ const BlogForm = ({ user, createBlog }) => {
             />
           </div>
           <div>
-            url:
-            <input
+            <TextField
+              size="small"
               type="text"
+              label="URL"
               value={url}
               name="url"
               onChange={({ target }) => setUrl(target.value)}
@@ -59,9 +64,9 @@ const BlogForm = ({ user, createBlog }) => {
               id="urlinput"
             />
           </div>
-          <button type="submit" id="createbutton">
+          <Button variant="contained" type="submit" id="createbutton">
             create
-          </button>
+          </Button>
         </form>
       </div>
     );
