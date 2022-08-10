@@ -46,7 +46,7 @@ const Country = ({detailCountry}) => {
   console.log(detailCountry, 'passed country')
   console.log('languages', detailCountry.languages)
 
-  console.log('FUCKING WEATHER',getWeather)
+  console.log('WEATHER',getWeather)
 
   return(
     <div>
