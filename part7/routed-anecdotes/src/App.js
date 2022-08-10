@@ -112,7 +112,7 @@ const CreateNew = (props) => {
       info: info.value,
       votes: 0,
     });
-    navigate("/");
+    w("/");
   };
   const handleReset = (e) => {
     console.log("reset event triggered");

@@ -52,7 +52,7 @@ export const initializeBlogs = () => {
   };
 };
 export const createBlog = (blogObject) => {
-  console.log("reducer creating", blogObject);
+  //console.log("reducer creating", blogObject);
   return async (dispatch) => {
     try {
       await blogService.create(blogObject);
