@@ -17,3 +17,5 @@ console.log(books.findIndex((a) => a.name === "lol"));
 books[0].name = "Antifragile";
 
 console.log(books);
+
+console.log(books.map((book) => ({ book: book.name, id: book.id + 5 })));
