@@ -5,10 +5,11 @@ const Book = require("./schemas/book");
 const Author = require("./schemas/author");
 const User = require("./schemas/user");
 const jwt = require("jsonwebtoken");
+require("./config");
 
-const JWT_SECRET = "BOOKDEMO";
-const MONGODB_URI =
-  "mongodb://sahin:blLmqF7cX7xOyYwH@cluster0-shard-00-00.6ikye.mongodb.net:27017,cluster0-shard-00-01.6ikye.mongodb.net:27017,cluster0-shard-00-02.6ikye.mongodb.net:27017/?ssl=true&replicaSet=atlas-13m5bq-shard-0&authSource=admin&retryWrites=true&w=majority";
+// const JWT_SECRET = "BOOKDEMO";
+// const MONGODB_URI =
+//   "mongodb://sahin:blLmqF7cX7xOyYwH@cluster0-shard-00-00.6ikye.mongodb.net:27017,cluster0-shard-00-01.6ikye.mongodb.net:27017,cluster0-shard-00-02.6ikye.mongodb.net:27017/?ssl=true&replicaSet=atlas-13m5bq-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 console.log("connecting to", MONGODB_URI);
 
