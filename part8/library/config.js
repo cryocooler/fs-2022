@@ -9,6 +9,5 @@ const JWT_SECRET = process.env.secret;
 
 module.exports = {
   MONGODB_URI,
-  PORT,
   JWT_SECRET,
 };

@@ -5,7 +5,7 @@ const Book = require("./schemas/book");
 const Author = require("./schemas/author");
 const User = require("./schemas/user");
 const jwt = require("jsonwebtoken");
-require("./config");
+const { JWT_SECRET, MONGODB_URI } = require("./config");
 
 // const JWT_SECRET = "BOOKDEMO";
 // const MONGODB_URI =
