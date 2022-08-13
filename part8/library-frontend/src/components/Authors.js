@@ -1,72 +1,18 @@
-import { gql, useMutation, useQuery } from "@apollo/client";
-import { ALL_AUTHORS, EDIT_BORN } from "../queries/queries";
-import { useState, useEffect } from "react";
-import { canUseLayoutEffect } from "@apollo/client/utilities";
-import Select from "react-select";
+import AuthorEditor from "./AuthorEditor";
 
 const Authors = (props) => {
-  const [birthYear, setBirthYear] = useState("");
-  const [name, setName] = useState("");
-  const [changeBirthYear] = useMutation(EDIT_BORN, {
-    refetchQueries: [{ query: ALL_AUTHORS }],
-  });
-
-  const result = useQuery(ALL_AUTHORS);
+  console.log("component refreshed");
+  if (!props.show) {
+    return null;
+  }
+  const result = props.authors;
 
   if (result.loading) {
     return <div>loading...</div>;
   }
 
-  const submit = async (event) => {
-    event.preventDefault();
-    changeBirthYear({
-      variables: { name: name.value, setBornTo: parseInt(birthYear) },
-    });
-    setBirthYear("");
-    setName("");
-  };
-
-  if (!props.show) {
-    return null;
-  }
-
   const authors = result.data.allAuthors;
   const options = authors.map((a) => ({ value: a.name, label: a.name }));
-  const ChangeBirth = () => {
-    return (
-      <div>
-        <Select defaultValue={name} onChange={setName} options={options} />
-        born
-        <input
-          value={birthYear}
-          onChange={({ target }) => setBirthYear(target.value)}
-        />
-        <div>
-          <button onClick={submit}> update author </button>
-        </div>
-      </div>
-    );
-  };
-  //   <form onSubmit={submit}>
-  //     <div>
-  //       name
-  //       <input
-  //         value={name}
-  //         onChange={({ target }) => setName(target.value)}
-  //       />
-  //     </div>
-  //     <div>
-  //       born
-  //       <input
-  //         value={birthYear}
-  //         onChange={({ target }) => setBirthYear(target.value)}
-  //       />
-  //     </div>
-  //     <div>
-  //       <button type="submit">update author</button>
-  //     </div>
-  //   </form>
-  //
 
   return (
     <div>
@@ -88,7 +34,9 @@ const Authors = (props) => {
         </tbody>
       </table>
       <br></br>
-      <ChangeBirth />
+      {props.token === null ? null : (
+        <AuthorEditor options={options} editQuery={props.editQuery} />
+      )}
     </div>
   );
 };

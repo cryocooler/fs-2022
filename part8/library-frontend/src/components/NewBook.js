@@ -8,8 +8,6 @@ const NewBook = (props) => {
   const [genre, setGenre] = useState("");
   const [genres, setGenres] = useState([]);
 
-  const [createBook] = useMutation(ADD_BOOK);
-
   if (!props.show) {
     return null;
   }
@@ -18,7 +16,7 @@ const NewBook = (props) => {
     event.preventDefault();
 
     console.log("add book...");
-    createBook({
+    props.creationQuery({
       variables: { title, published: parseInt(published), author, genres },
     });
 

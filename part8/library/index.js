@@ -1,4 +1,9 @@
-const { ApolloServer, gql, UserInputError } = require("apollo-server");
+const {
+  ApolloServer,
+  gql,
+  UserInputError,
+  AuthenticationError,
+} = require("apollo-server");
 const { v1: uuid } = require("uuid");
 const mongoose = require("mongoose");
 const Book = require("./schemas/book");
@@ -81,23 +86,27 @@ const resolvers = {
     authorCount: async () => Author.collection.countDocuments(),
     allBooks: async (root, args) => {
       if (args.author) {
-        const ReturnBook = await Book.findAll({ author: args.author });
+        const author = await Author.findOne({ name: args.author });
+        const ReturnBook = await Book.findAll({ author: author }).populate(
+          "author"
+        );
         return ReturnBook;
       }
       if (args.genre) {
         const ReturnBook = await book.findAll({
-          genres: { $in: [args.genre] },
+          genres: { $in: [args.genre] }.populate("author"),
         });
         return ReturnBook;
       }
       if (args.genre && args.author) {
-        const ReturnBook = await book.findAll({
-          genres: args.genre,
-          author: args.author,
+        const author = await Author.findOne({ name: args.author });
+        const ReturnBook = await book.find({
+          author: author,
+          genres: { $in: [args.genre] }.populate("author"),
         });
         return ReturnBook;
       } else {
-        const book = await Book.find({});
+        const book = await Book.find({}).populate("author");
         return book;
       }
     },
@@ -108,10 +117,10 @@ const resolvers = {
   },
 
   Author: {
-    name: (root) => root.name,
-    born: (root) => root.born,
-    bookCount: (root) => {
-      return books.filter((book) => book.author === root.name).length;
+    bookCount: async (root) => {
+      const author = await Author.findOne({ name: root.name });
+      const authorBooks = await Book.find({ author: author });
+      return authorBooks.length;
     },
   },
 
