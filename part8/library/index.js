@@ -49,6 +49,10 @@ const typeDefs = gql`
     id: ID!
   }
 
+  type Query {
+    me: User
+  }
+
   type Token {
     value: String!
   }
@@ -191,7 +195,7 @@ const resolvers = {
     login: async (root, args) => {
       const user = await User.findOne({ username: args.username });
 
-      if (!user || args.password !== "secret") {
+      if (!user || args.password !== "library2022") {
         throw new UserInputError("wrong credentials");
       }
 

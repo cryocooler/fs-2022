@@ -1,33 +1,18 @@
-import { useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
-import { LOGIN } from "../queries/queries";
+import { useState } from "react";
 
-const LoginForm = (props) => {
+const LoginForm = ({ show, login }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  if (!props.show) {
+  if (!show) {
     return null;
   }
-
-  //   const [login, result] = useMutation(LOGIN, {
-  //     onError: (error) => {
-  //       setError(error.graphQLErrors[0].message);
-  //     },
-  //   });
-
-  //   useEffect(() => {
-  //     if (result.data) {
-  //       const token = result.data.login.value;
-  //       setToken(token);
-  //       localStorage.setItem("books-user-token", token);
-  //     }
-  //   }, [result.data]); // eslint-disable-line
+  // eslint-disable-line
 
   const submit = async (event) => {
     event.preventDefault();
 
-    // login({ variables: { username, password } });
+    login({ variables: { username, password } });
   };
 
   return (
