@@ -3,14 +3,16 @@ const RecList = (props) => {
     return null;
   }
 
-  if (props.user.loading) {
+  if (props.user.loading || props.books.loading) {
     return <div>loading...</div>;
   }
   const user = props.user.data.me;
+  console.log("favegenre", user.favouriteGenre);
   const filteredBooks = props.books.data.allBooks.filter((book) =>
     book.genres.includes(user.favouriteGenre)
   );
   console.log("user", user);
+  //props.query({ variables: { favouriteGenre: user.favouriteGenre } });
 
   return (
     <div>
