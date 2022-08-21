@@ -1,0 +1,327 @@
+Script started on Sun Aug 21 14:40:43 2022
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker container run -it ubuntu b [Kaash[?1l>[?2004l
+]2;docker container run -it ubuntu bash]1;dockerUnable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+[1A[2Kd19f32bd9e41: Pulling fs layer [1B[1A[2Kd19f32bd9e41: Downloading  311.3kB/30.43MB[1B[1A[2Kd19f32bd9e41: Downloading  2.481MB/30.43MB[1B[1A[2Kd19f32bd9e41: Downloading  9.341MB/30.43MB[1B[1A[2Kd19f32bd9e41: Downloading  16.83MB/30.43MB[1B[1A[2Kd19f32bd9e41: Downloading  24.32MB/30.43MB[1B[1A[2Kd19f32bd9e41: Downloading   29.3MB/30.43MB[1B[1A[2Kd19f32bd9e41: Download complete [1B[1A[2Kd19f32bd9e41: Extracting  327.7kB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  3.277MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  6.226MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting   8.52MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  11.14MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  14.75MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  18.35MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  21.95MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  25.23MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  26.54MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  29.16MB/30.43MB[1B[1A[2Kd19f32bd9e41: Extracting  30.43MB/30.43MB[1B[1A[2Kd19f32bd9e41: Pull complete [1BDigest: sha256:34fea4f31bf187bc915536831fd0afc9d214755bf700b5cdb1336c82516d154e
+Status: Downloaded newer image for ubuntu:latest
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [K]0;root@38e15b54f397: /root@38e15b54f397:/# mkdir usrc    /usr/src/app
+[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# ls
+[?2004l[0m[01;36mbin[0m   [01;34mdev[0m  [01;34mhome[0m  [01;36mlib32[0m  [01;36mlibx32[0m  [01;34mmnt[0m  [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m  [30;42mtmp[0m  [01;34mvar[0m
+[01;34mboot[0m  [01;34metc[0m  [01;36mlib[0m   [01;36mlib64[0m  [01;34mmedia[0m   [01;34mopt[0m  [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# touch /usr/src/app/index.js
+[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Kls usr/
+[?2004l[0m[01;34mbin[0m    [01;34minclude[0m  [01;34mlib32[0m  [01;34mlibexec[0m  [01;34mlocal[0m  [01;34mshare[0m
+[01;34mgames[0m  [01;34mlib[0m      [01;34mlib64[0m  [01;34mlibx32[0m   [01;34msbin[0m   [01;34msrc[0m
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# ls s usr/src
+[?2004l[0m[01;34mapp[0m
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# ls usr/src/app/
+[?2004lindex.js
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker container ls -a[?1l>[?2004l
+]2;docker container ls -a]1;dockerCONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                          PORTS     NAMES
+38e15b54f397   ubuntu        "bash"     2 minutes ago    Exited (0) About a minute ago             interesting_blackwell
+46754132d5d7   hello-world   "/hello"   50 minutes ago   Exited (0) 50 minutes ago                 hopeful_banzai
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004he ddocker start itn  nteresting_blackwell[1m [0m[Kl[0m r [K[A[79C[K[1B[K[A[79C[?2004l[1B[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker start interesting_blackwell[1m [0m[Kl[K[?1l>[?2004l
+]2;docker start interesting_blackwell]1;dockerinteresting_blackwell
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker container ls -a[?1l>[?2004l
+]2;docker container ls -a]1;dockerCONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+38e15b54f397   ubuntu        "bash"     5 minutes ago    Up 17 seconds                         interesting_blackwell
+46754132d5d7   hello-world   "/hello"   52 minutes ago   Exited (0) 52 minutes ago             hopeful_banzai
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker kill interesting_blackwell[1m [0m[K[K[?1l>[?2004l
+]2;docker kill interesting_blackwell]1;dockerinteresting_blackwell
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccontainer ls - -a[?1l>[?2004l
+]2;container ls -a]1;containerzsh: command not found: container
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddok cker container ls -a[?1l>[?2004l
+]2;docker container ls -a]1;dockerCONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                       PORTS     NAMES
+38e15b54f397   ubuntu        "bash"     6 minutes ago    Exited (137) 9 seconds ago             interesting_blackwell
+46754132d5d7   hello-world   "/hello"   53 minutes ago   Exited (0) 53 minutes ago              hopeful_banzai
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker start -i interesting_blackwell[1m [0m[K[K[?1l>[?2004l
+]2;docker start -i interesting_blackwell]1;docker[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [K]0;root@38e15b54f397: /root@38e15b54f397:/# ls
+[?2004l[0m[01;36mbin[0m   [01;34mdev[0m  [01;34mhome[0m  [01;36mlib32[0m  [01;36mlibx32[0m  [01;34mmnt[0m  [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m  [30;42mtmp[0m  [01;34mvar[0m
+[01;34mboot[0m  [01;34metc[0m  [01;36mlib[0m   [01;36mlib64[0m  [01;34mmedia[0m   [01;34mopt[0m  [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# apt-get update
+[?2004l0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+0% [1 InRelease 14.2 kB/270 kB 5%] [Waiting for headers]                                                        Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+0% [1 InRelease 14.2 kB/270 kB 5%] [2 InRelease 1137 B/110 kB 1%]                                                                 0% [1 InRelease 126 kB/270 kB 47%]0% [1 InRelease 191 kB/270 kB 71%]                                  0% [Waiting for headers]                        Get:3 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [313 kB]
+0% [Waiting for headers] [3 Packages 1239 B/313 kB 0%]0% [Waiting for headers] [3 Packages 34.5 kB/313 kB 11%]                                                        Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]
+0% [4 InRelease 14.2 kB/114 kB 12%] [3 Packages 69.3 kB/313 kB 22%]                                                                   0% [Waiting for headers] [3 Packages 117 kB/313 kB 37%]0% [Waiting for headers] [3 Packages 208 kB/313 kB 67%]                                                       Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]
+0% [5 InRelease 1153 B/99.8 kB 1%] [3 Packages 247 kB/313 kB 79%]                                                                 0% [3 Packages 313 kB/313 kB 100%]                                  0% [Working]0% [3 Packages store 0 B] [Waiting for headers] [Waiting for headers]                                                                     0% [Waiting for headers] [Waiting for headers]17% [Waiting for headers] [Waiting for headers]                                               Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+17% [6 Packages 1237 B/1792 kB 0%] [Waiting for headers]                                                        Get:7 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [132 kB]
+17% [6 Packages 36.0 kB/1792 kB 2%] [7 Packages 11.4 kB/132 kB 9%]                                                                  17% [6 Packages 110 kB/1792 kB 6%] [Waiting for headers]                                                        Get:8 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [4644 B]
+                                                        Get:9 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [333 kB]
+18% [6 Packages 126 kB/1792 kB 7%] [9 Packages 300 B/333 kB 0%]18% [7 Packages store 0 B] [6 Packages 126 kB/1792 kB 7%] [9 Packages 300 B/333                                                                               18% [6 Packages 146 kB/1792 kB 8%] [9 Packages 27.8 kB/333 kB 8%]18% [8 Packages store 0 B] [6 Packages 146 kB/1792 kB 8%] [9 Packages 27.8 kB/3                                                                               19% [6 Packages 147 kB/1792 kB 8%] [9 Packages 29.3 kB/333 kB 9%]                                                                 21% [6 Packages 401 kB/1792 kB 22%]21% [9 Packages store 0 B] [6 Packages 401 kB/1792 kB 22%]                                                          21% [6 Packages 439 kB/1792 kB 24%]                                   26% [Waiting for headers]                         Get:10 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+26% [10 Packages 23.2 kB/164 kB 14%]26% [6 Packages store 0 B] [10 Packages 23.2 kB/164 kB 14%]                                                           Get:11 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+27% [6 Packages store 0 B] [11 Packages 48.4 kB/266 kB 18%]                                                           28% [6 Packages store 0 B] [Waiting for headers]                                                Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+28% [6 Packages store 0 B] [12 Packages 21.4 kB/17.5 MB 0%]                                                           31% [12 Packages 622 kB/17.5 MB 4%]31% [10 Packages store 0 B] [12 Packages 622 kB/17.5 MB 4%]                                                           32% [12 Packages 771 kB/17.5 MB 4%]32% [11 Packages store 0 B] [12 Packages 771 kB/17.5 MB 4%]                                                           33% [12 Packages 964 kB/17.5 MB 6%]83% [12 Packages 14.9 MB/17.5 MB 85%]                                     92% [Working]             Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [641 kB]
+92% [13 Packages 48.0 kB/641 kB 7%]92% [12 Packages store 0 B] [13 Packages 48.0 kB/641 kB 7%]                                                           Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [264 kB]
+95% [12 Packages store 0 B] [14 Packages 128 kB/264 kB 48%]                                                           95% [12 Packages store 0 B] [Waiting for headers]                                                 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [7791 B]
+                                                 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [354 kB]
+96% [12 Packages store 0 B] [16 Packages 43.2 kB/354 kB 12%]                                                            97% [12 Packages store 0 B]                           Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [6909 B]
+97% [12 Packages store 0 B] [17 Packages 6909 B/6909 B 100%]                                                            97% [12 Packages store 0 B]97% [12 Packages store 0 B]                           97% [Working]97% [13 Packages store 0 B]                           98% [Working]98% [14 Packages store 0 B]                           98% [Working]98% [15 Packages store 0 B]                           99% [Working]99% [16 Packages store 0 B]                           99% [Working]99% [17 Packages store 0 B]                           100% [Working]              Fetched 22.3 MB in 3s (7375 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# apt -get -y           t-get -y install nano
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 93%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 280 kB of archives.
+After this operation, 881 kB of additional disk space will be used.
+0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 nano amd64 6.2-1 [280 kB]
+1% [1 nano 4097 B/280 kB 1%]66% [1 nano 230 kB/280 kB 82%]                              100% [Working]              Fetched 280 kB in 1s (356 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4395 files and directories currently installed.)
+Preparing to unpack .../archives/nano_6.2-1_amd64.deb ...
+Unpacking nano (6.2-1) ...
+Setting up nano (6.2-1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls -a[?1l>[?2004l
+]2;ls -G -a]1;ls[1m[36m.[39;49m[0m              [1m[36m..[39;49m[0m             [1m[36mscript-answers[39;49m[0m [1m[36mtodo-app[39;49m[0m       typescript
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker container ls -a[?1l>[?2004l
+]2;docker container ls -a]1;dockerCONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+38e15b54f397   ubuntu        "bash"     7 minutes ago    Exited (0) 6 seconds ago              interesting_blackwell
+46754132d5d7   hello-world   "/hello"   54 minutes ago   Exited (0) 54 minutes ago             hopeful_banzai
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscirpt    ript ./script-answers[1m/[0m[0m/exercise_ [K112_3.txt[?1l>[?2004l
+]2;script ./script-answers/exercise_12_3.txt]1;scriptScript started, output file is ./script-answers/exercise_12_3.txt
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker start -i interesting_blackwell[1m [0m[K[K[?1l>[?2004l
+]2;docker start -i interesting_blackwell]1;docker[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [K]0;root@38e15b54f397: /root@38e15b54f397:/# nano .Ys  /src     u /usr/src/app/index.js 
+[?2004l[?2004h[?1049h[22;0;0t[1;25r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[23;34H(B[0;7m[ Reading... ](B[m[23;33H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 6.2 [17b/usr/src/app/index.js [25b [1;79H(B[m[24d(B[0;7m^G(B[m Help[14G(B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut[53G(B[0;7m^T(B[m Execute   (B[0;7m^C(B[m Location[25d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste     (B[0;7m^J(B[m Justify   (B[0;7m^/(B[m Go To Line[2d[?12l[?25h[?25l[1;55H(B[0;7m*[79G(B[m[?12l[?25h[2dc[?25l[?12l[?25ho[?25l[?12l[?25hn[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25hl[?25l[?12l[?25he[?25l[?12l[?25h.[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hg[?25l[?12l[?25h([?25l[?12l[?25h'[?25l[?12l[?25hH[?25l[?12l[?25he[?25l[?12l[?25hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25h[42m [49m(B[m[?25l[23d[K[?12l[?25h[2;19H W[?25l[?12l[?25ho[?25l[?12l[?25hr[?25l[?12l[?25hl[?25l[?12l[?25hd[?25l[?12l[?25h[2;13H(B[0;1m[35m'Hello World'[39m(B[m[?25l[?12l[?25h)[?25l[23d(B[0;7mSave modified buffer? [57b [24;1H Y(B[m Yes[K[25d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[23;23H[?12l[?25h[?25l[24d(B[0;7m^G(B[m Help[24;21H(B[0;7mM-D(B[m DOS Format[41G(B[0;7mM-A(B[m Append[24;61H(B[0;7mM-B(B[m Backup File[25d(B[0;7m^C(B[m Cancel[17G    (B[0;7mM-M(B[m Mac Format[41G(B[0;7mM-P(B[m Prepend[25;61H(B[0;7m^T(B[m Browse[23d(B[0;7mFile Name to Write: /usr/src/app/index.js(B[m[?12l[?25h[?25l[23;33H[1K (B[0;7m[ Writing... ](B[m[K[1;55H(B[0;7m [79G(B[m[23;33H(B[0;7m[ Wrote 1 line ](B[m[J[25d[?12l[?25h[25;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Kexit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscript ./script-answers[1m/[0m[0m/exercise_ [K112_4.txt[?1l>[?2004l
+]2;script ./script-answers/exercise_12_4.txt]1;scriptScript started, output file is ./script-answers/exercise_12_4.txt
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker -i    start -i interesting_blackwell[1m [0m[K[K[?1l>[?2004l
+]2;docker start -i interesting_blackwell]1;docker[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [K]0;root@38e15b54f397: /root@38e15b54f397:/# apt-get -y install curl
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates libbrotli1 libcurl4 libldap-2.5-0 libldap-common
+  libnghttp2-14 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libssh-4 openssl publicsuffix
+Suggested packages:
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+  libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql
+The following NEW packages will be installed:
+  ca-certificates curl libbrotli1 libcurl4 libldap-2.5-0 libldap-common
+  libnghttp2-14 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libssh-4 openssl publicsuffix
+0 upgraded, 15 newly installed, 0 to remove and 3 not upgraded.
+Need to get 2970 kB of archives.
+After this operation, 7063 kB of additional disk space will be used.
+0% [Working]0% [Waiting for headers]                        Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssl amd64 3.0.2-0ubuntu1.6 [1184 kB]
+0% [1 openssl 1163 B/1184 kB 0%]                                33% [Working]             Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 ca-certificates all 20211016 [148 kB]
+34% [2 ca-certificates 40.6 kB/148 kB 28%]                                          Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libnghttp2-14 amd64 1.43.0-1build3 [76.3 kB]
+41% [3 libnghttp2-14 76.3 kB/76.3 kB 100%]                                          Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpsl5 amd64 0.21.0-1.2build2 [58.4 kB]
+                                          43% [4 libpsl5 33.3 kB/58.4 kB 57%]                                   45% [Working]             Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 publicsuffix all 20211207.1025-1 [129 kB]
+45% [5 publicsuffix 3323 B/129 kB 3%]                                     Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbrotli1 amd64 1.0.9-2build6 [315 kB]
+51% [6 libbrotli1 63.4 kB/315 kB 20%]                                     59% [Waiting for headers]                         Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg2-3ubuntu1 [20.8 kB]
+60% [7 libsasl2-modules-db 20.8 kB/20.8 kB 100%]                                                61% [Waiting for headers]                         Get:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsasl2-2 amd64 2.1.27+dfsg2-3ubuntu1 [53.9 kB]
+62% [8 libsasl2-2 27.9 kB/53.9 kB 52%]                                      Get:9 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libldap-2.5-0 amd64 2.5.12+dfsg-0ubuntu0.22.04.1 [184 kB]
+65% [9 libldap-2.5-0 14.3 kB/184 kB 8%]                                       70% [Waiting for headers]                         Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build4 [58.2 kB]
+70% [10 librtmp1 1132 B/58.2 kB 2%]                                   73% [Waiting for headers]                         Get:11 http://archive.ubuntu.com/ubuntu jammy/main amd64 libssh-4 amd64 0.9.6-2build1 [184 kB]
+74% [11 libssh-4 31.0 kB/184 kB 17%]                                    80% [Waiting for headers]                         Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcurl4 amd64 7.81.0-1ubuntu1.3 [290 kB]
+80% [12 libcurl4 1165 B/290 kB 0%]                                  89% [Waiting for headers]                         Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.3 [194 kB]
+89% [13 curl 17.5 kB/194 kB 9%]                               Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libldap-common all 2.5.12+dfsg-0ubuntu0.22.04.1 [16.4 kB]
+96% [14 libldap-common 16.4 kB/16.4 kB 100%]                                            Get:15 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsasl2-modules amd64 2.1.27+dfsg2-3ubuntu1 [57.5 kB]
+98% [15 libsasl2-modules 32.7 kB/57.5 kB 57%]                                             100% [Working]              Fetched 2970 kB in 1s (2793 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package openssl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4468 files and directories currently installed.)
+Preparing to unpack .../00-openssl_3.0.2-0ubuntu1.6_amd64.deb ...
+Unpacking openssl (3.0.2-0ubuntu1.6) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../01-ca-certificates_20211016_all.deb ...
+Unpacking ca-certificates (20211016) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../02-libnghttp2-14_1.43.0-1build3_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.43.0-1build3) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../03-libpsl5_0.21.0-1.2build2_amd64.deb ...
+Unpacking libpsl5:amd64 (0.21.0-1.2build2) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../04-publicsuffix_20211207.1025-1_all.deb ...
+Unpacking publicsuffix (20211207.1025-1) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../05-libbrotli1_1.0.9-2build6_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.0.9-2build6) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../06-libsasl2-modules-db_2.1.27+dfsg2-3ubuntu1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg2-3ubuntu1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../07-libsasl2-2_2.1.27+dfsg2-3ubuntu1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27+dfsg2-3ubuntu1) ...
+Selecting previously unselected package libldap-2.5-0:amd64.
+Preparing to unpack .../08-libldap-2.5-0_2.5.12+dfsg-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking libldap-2.5-0:amd64 (2.5.12+dfsg-0ubuntu0.22.04.1) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../09-librtmp1_2.4+20151223.gitfa8646d.1-2build4_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build4) ...
+Selecting previously unselected package libssh-4:amd64.
+Preparing to unpack .../10-libssh-4_0.9.6-2build1_amd64.deb ...
+Unpacking libssh-4:amd64 (0.9.6-2build1) ...
+Selecting previously unselected package libcurl4:amd64.
+Preparing to unpack .../11-libcurl4_7.81.0-1ubuntu1.3_amd64.deb ...
+Unpacking libcurl4:amd64 (7.81.0-1ubuntu1.3) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../12-curl_7.81.0-1ubuntu1.3_amd64.deb ...
+Unpacking curl (7.81.0-1ubuntu1.3) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../13-libldap-common_2.5.12+dfsg-0ubuntu0.22.04.1_all.deb ...
+Unpacking libldap-common (2.5.12+dfsg-0ubuntu0.22.04.1) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../14-libsasl2-modules_2.1.27+dfsg2-3ubuntu1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.27+dfsg2-3ubuntu1) ...
+Setting up libpsl5:amd64 (0.21.0-1.2build2) ...
+Setting up libbrotli1:amd64 (1.0.9-2build6) ...
+Setting up libsasl2-modules:amd64 (2.1.27+dfsg2-3ubuntu1) ...
+Setting up libnghttp2-14:amd64 (1.43.0-1build3) ...
+Setting up libldap-common (2.5.12+dfsg-0ubuntu0.22.04.1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg2-3ubuntu1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build4) ...
+Setting up libsasl2-2:amd64 (2.1.27+dfsg2-3ubuntu1) ...
+Setting up libssh-4:amd64 (0.9.6-2build1) ...
+Setting up openssl (3.0.2-0ubuntu1.6) ...
+Setting up publicsuffix (20211207.1025-1) ...
+Setting up libldap-2.5-0:amd64 (2.5.12+dfsg-0ubuntu0.22.04.1) ...
+Setting up ca-certificates (20211016) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.34.0 /usr/local/share/perl/5.34.0 /usr/lib/x86_64-linux-gnu/perl5/5.34 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.34 /usr/share/perl/5.34 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+127 added, 0 removed; done.
+Setting up libcurl4:amd64 (7.81.0-1ubuntu1.3) ...
+Setting up curl (7.81.0-1ubuntu1.3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+Processing triggers for ca-certificates (20211016) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [7mcurl -sL https://deb.nodesource.com/setup_16.x | bash[27m
+[7mapt install -y nodejs[27m[Acurl -sL https://deb.nodesource.com/setup_16.x | bash
+apt install -y nodejs
+[?2004l
+## Installing the NodeSource Node.js 16.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+0% [Working]            Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+0% [Connecting to security.ubuntu.com (91.189.91.38)]                                                     Hit:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+                                                     0% [Waiting for headers]0% [Waiting for headers] [Waiting for headers]                                              Hit:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+                                              0% [Waiting for headers]                        Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+                        0% [Working]0% [Working]0% [Working]20% [Working]             Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+
+## Installing packages required for setup: lsb-release gnupg...
+
++ apt-get install -y lsb-release gnupg > /dev/null 2>&1
+
+## Confirming "jammy" is supported...
+
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_16.x/dists/jammy/Release'
+
+## Adding the NodeSource signing key to your keyring...
+
++ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
+
+## Creating apt sources list file for the NodeSource Node.js 16.x repo...
+
++ echo 'deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x jammy main' > /etc/apt/sources.list.d/nodesource.list
++ echo 'deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x jammy main' >> /etc/apt/sources.list.d/nodesource.list
+
+## Running `apt-get update` for you...
+
++ apt-get update
+0% [Working]            Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+0% [Connecting to security.ubuntu.com (91.189.91.38)] [Waiting for headers]                                                                           Get:2 https://deb.nodesource.com/node_16.x jammy InRelease [4583 B]
+0% [Waiting for headers] [Waiting for headers] [2 InRelease 4583 B/4583 B 100%]                                                                               0% [Waiting for headers] [Waiting for headers]                                              Hit:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+                                              0% [Waiting for headers]                        Hit:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+0% [Waiting for headers]0% [Waiting for headers]                        Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+                        0% [Working]0% [Working]0% [Waiting for headers]0% [Waiting for headers]88% [Waiting for headers]                         Get:6 https://deb.nodesource.com/node_16.x jammy/main amd64 Packages [775 B]
+100% [6 Packages 775 B/775 B 100%]                                  100% [Working]100% [6 Packages store 0 B]                           100% [Working]              Fetched 5358 B in 1s (6840 B/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+
+## Run `[1msudo apt-get install -y nodejs(B[m` to install Node.js 16.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+
+
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 2%Reading state information... Done
+The following NEW packages will be installed:
+  nodejs
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 27.1 MB of archives.
+After this operation, 128 MB of additional disk space will be used.
+[33m0% [Working][0m            Get:1 https://deb.nodesource.com/node_16.x jammy/main amd64 nodejs amd64 16.17.0-deb-1nodesource1 [27.1 MB]
+[33m0% [1 nodejs 16.2 kB/27.1 MB 0%][0m[33m                                100% [Working][0m              Fetched 27.1 MB in 1s (45.5 MB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+
+7[0;24r8[1ASelecting previously unselected package nodejs.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6025 files and directories currently installed.)
+Preparing to unpack .../nodejs_16.17.0-deb-1nodesource1_amd64.deb ...
+7[25;0f[42m[30mProgress: [  0%][49m[39m [..........................................................] 87[25;0f[42m[30mProgress: [ 20%][49m[39m [###########...............................................] 8Unpacking nodejs (16.17.0-deb-1nodesource1) ...
+7[25;0f[42m[30mProgress: [ 40%][49m[39m [#######################...................................] 8Setting up nodejs (16.17.0-deb-1nodesource1) ...
+7[25;0f[42m[30mProgress: [ 60%][49m[39m [##################################........................] 87[25;0f[42m[30mProgress: [ 80%][49m[39m [##############################################............] 8
+7[0;25r8[1A[J[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Knode /usr/src/app/index.js 
+[?2004lHello World
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Kapt -ge    -get update
+[?2004l0% [Working]            Hit:1 https://deb.nodesource.com/node_16.x jammy InRelease
+0% [Connecting to archive.ubuntu.com] [Connected to security.ubuntu.com (91.189                                                                               0% [Connecting to archive.ubuntu.com] [Waiting for headers]                                                           Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+                                                           0% [Connecting to archive.ubuntu.com]0% [Connecting to archive.ubuntu.com]0% [Connecting to archive.ubuntu.com]0% [Connecting to archive.ubuntu.com]0% [Connecting to archive.ubuntu.com]0% [Connecting to archive.ubuntu.com]0% [Connecting to archive.ubuntu.com]                                     Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
+                                     0% [Working]            Hit:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+0% [Working]0% [Waiting for headers]                        Hit:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+                        0% [Working]0% [Working]20% [Working]             Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# 
+[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# l ^C[?2004l[?2004h[?2004l
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# ^C[?2004l[?2004h[?2004l
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# 
+[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# 
+[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# apt-get updatenode /usr/src/app/index.js 
+[?2004lHello World
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Knode /usr/src/app/index.js [Knano /usr/src/app/index.js
+[?2004l[?2004h[?1049h[22;0;0t[1;25r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[23;34H(B[0;7m[ Reading... ](B[m[23;33H(B[0;7m[ Read 1 line ](B[m[H(B[0;7m  GNU nano 6.2 [17b/usr/src/app/index.js [25b [1;79H(B[m[24d(B[0;7m^G(B[m Help[14G(B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut[53G(B[0;7m^T(B[m Execute   (B[0;7m^C(B[m Location[25d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste     (B[0;7m^J(B[m Justify   (B[0;7m^/(B[m Go To Line[2dconsole.log((B[0;1m[35m'Hello World'[39m(B[m)[?12l[?25h[?25l[23d[J[25d[?12l[?25h[25;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Kap install          t install -y nodejs
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 9%Reading package lists... 9%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 87%Building dependency tree... Done
+Reading state information... 0% Reading state information... 2%Reading state information... Done
+nodejs is already the newest version (16.17.0-deb-1nodesource1).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# node /usr/src/app/index.js 
+[?2004lHello World
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# [Kls /usr/a src/app/index.js
+[?2004l/usr/src/app/index.js
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# cat |  |head index.js
+[?2004lhead: cannot open 'index.js' for reading: No such file or directory
+ls
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# ls -a
+[?2004l[0m[01;34m.[0m   [01;32m.dockerenv[0m  [01;34mboot[0m  [01;34metc[0m   [01;36mlib[0m    [01;36mlib64[0m   [01;34mmedia[0m  [01;34mopt[0m   [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[01;34m..[0m  [01;36mbin[0m         [01;34mdev[0m   [01;34mhome[0m  [01;36mlib32[0m  [01;36mlibx32[0m  [01;34mmnt[0m    [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m   [30;42mtmp[0m  [01;34mvar[0m
+[?2004h]0;root@38e15b54f397: /root@38e15b54f397:/# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mscript-answers[39;49m[0m [1m[36mtodo-app[39;49m[0m       typescript
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mscript-answers[39;49m[0m [1m[36mtodo-app[39;49m[0m       typescript
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls -a[?1l>[?2004l
+]2;ls -G -a]1;ls[1m[36m.[39;49m[0m              [1m[36m..[39;49m[0m             [1m[36mscript-answers[39;49m[0m [1m[36mtodo-app[39;49m[0m       typescript
+[1m[7m%[27m[1m[0m                                                                                ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h
