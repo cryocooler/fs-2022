@@ -1,0 +1,37 @@
+Script started on Wed Aug 24 21:10:40 2022
+[?1034hsh-3.2$ docker exec -i redis[K[K[K[K[Kconst configs = require("../util/config");[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ktodo-backend_redis_1 redis-cli
+KEYS *
+added_todos
+get
+test
+learn redis
+mykey
+GET add	ed_todos
+9002
+SET added_todos 9001
+OK
+GET added_todos
+9002
+DEL added_todos
+1
+KEYS *
+get
+test
+learn redis
+mykey
+KEYS *
+added_todos
+get
+test
+learn redis
+mykey
+added_todos
+ERR unknown command 'added_todos', with args beginning with: 
+
+GET added_todos
+1
+exit
+sh-3.2$ exit
+exit
+
+Script done on Wed Aug 24 21:13:14 2022

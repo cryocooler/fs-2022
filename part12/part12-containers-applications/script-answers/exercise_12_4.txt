@@ -1075,4 +1075,380 @@ See 'docker --help'
 0b1cd23feb95   mongo     "docker-entrypoint.s…"   30 minutes ago   Up 24 seconds   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
 [1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddockert  kill 0b1cd23feb95[1m [0m[0m [?1l>[?2004l
 ]2;docker kill 0b1cd23feb95]1;docker0b1cd23feb95
-[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hg
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hg mmongo[?1l>[?2004l
+]2;mongo]1;mongo[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend/mongo]1;..backend/mongo[0m[27m[24m[J[01;32m➜  [36mmongo[00m [01;34mgit:([31mmain[34m)[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;lsindex.js      [1m[36mmodels[39;49m[0m        mongo-init.js
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend/mongo]1;..backend/mongo[0m[27m[24m[J[01;32m➜  [36mmongo[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccd ..[?1l>[?2004l
+]2;cd ..]1;cd[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[7mdocker-compose -f docker-compose.dev.yml up -d[27m[46D[27md[27mo[27mc[27mk[27me[27mr[27m-[27mc[27mo[27mm[27mp[27mo[27ms[27me[27m [27m-[27mf[27m [27md[27mo[27mc[27mk[27me[27mr[27m-[27mc[27mo[27mm[27mp[27mo[27ms[27me[27m.[27md[27me[27mv[27m.[27my[27mm[27ml[27m [27mu[27mp[27m [27m-[27md[?1l>[?2004l
+]2;docker-compose -f docker-compose.dev.yml up -d]1;docker-compose[33mWARNING[0m: Found orphan containers (todo-backend_app_1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+Starting todo-backend_mongo_1 ... 
+[1A[2KStarting todo-backend_mongo_1 ... [32mdone[0m[1B[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccontai    c  ddocker container ls[?1l>[?2004l
+]2;docker container ls]1;dockerCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                     NAMES
+0b1cd23feb95   mongo     "docker-entrypoint.s…"   40 minutes ago   Up 10 seconds   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccd ..[?1l>[?2004l
+]2;cd ..]1;cd[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app]1;..ions/todo-app[0m[27m[24m[J[01;32m➜  [36mtodo-app[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mtodo-backend[39;49m[0m  [1m[36mtodo-frontend[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app]1;..ions/todo-app[0m[27m[24m[J[01;32m➜  [36mtodo-app[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccd ..[?1l>[?2004l
+]2;cd ..]1;cd[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mdocker-test[39;49m[0m    [1m[36mscript-answers[39;49m[0m [1m[36mtodo-app[39;49m[0m       typescript
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscript s ./script-answers[1m/[0m[0m/exercise128_8   _8.txt[?1l>[?2004l
+]2;script ./script-answers/exercise12_8.txt]1;scriptScript started, output file is ./script-answers/exercise12_8.txt
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocket start -i todo-app[1m/[0m[0m    _  -backend[1C_non   mongo_i[?1l>[?2004l
+]2;docket start -i todo-backend_mongo_i]1;docketzsh: command not found: docket
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker start -i todo-backend_app_1[1m [0m[0m      mongo_1[?1l>[?2004l
+]2;docker start -i todo-backend_mongo_1]1;docker{"t":{"$date":"2022-08-21T14:39:59.885+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":"[1661092799:885039][1:0x7fcbcf08c700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 13, snapshot max: 13 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 99"}}
+ls
+^C{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"CONTROL",  "id":23377,   "ctx":"SignalHandler","msg":"Received signal","attr":{"signal":2,"error":"Interrupt"}}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"CONTROL",  "id":23378,   "ctx":"SignalHandler","msg":"Signal was sent by kill(2)","attr":{"pid":0,"uid":0}}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"CONTROL",  "id":23381,   "ctx":"SignalHandler","msg":"will terminate after current cmd ends"}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"SignalHandler","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":15000}}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"REPL",     "id":4794602, "ctx":"SignalHandler","msg":"Attempting to enter quiesce mode"}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"SignalHandler","msg":"Shutting down the MirrorMaestro"}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"SignalHandler","msg":"Shutting down the WaitForMajorityService"}
+{"t":{"$date":"2022-08-21T14:40:20.474+00:00"},"s":"I",  "c":"CONTROL",  "id":4784903, "ctx":"SignalHandler","msg":"Shutting down the LogicalSessionCache"}
+{"t":{"$date":"2022-08-21T14:40:20.475+00:00"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"SignalHandler","msg":"Shutdown: going to close listening sockets"}
+{"t":{"$date":"2022-08-21T14:40:20.475+00:00"},"s":"I",  "c":"NETWORK",  "id":23017,   "ctx":"listener","msg":"removing socket file","attr":{"path":"/tmp/mongodb-27017.sock"}}
+{"t":{"$date":"2022-08-21T14:40:20.475+00:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"SignalHandler","msg":"Shutting down the global connection pool"}
+{"t":{"$date":"2022-08-21T14:40:20.475+00:00"},"s":"I",  "c":"CONTROL",  "id":4784906, "ctx":"SignalHandler","msg":"Shutting down the FlowControlTicketholder"}
+{"t":{"$date":"2022-08-21T14:40:20.475+00:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"SignalHandler","msg":"Stopping further Flow Control ticket acquisitions."}
+{"t":{"$date":"2022-08-21T14:40:20.475+00:00"},"s":"I",  "c":"CONTROL",  "id":4784908, "ctx":"SignalHandler","msg":"Shutting down the PeriodicThreadToAbortExpiredTransactions"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"REPL",     "id":4784909, "ctx":"SignalHandler","msg":"Shutting down the ReplicationCoordinator"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"SHARDING", "id":4784910, "ctx":"SignalHandler","msg":"Shutting down the ShardingInitializationMongoD"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"REPL",     "id":4784911, "ctx":"SignalHandler","msg":"Enqueuing the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"-",        "id":4784912, "ctx":"SignalHandler","msg":"Killing all operations for shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"-",        "id":4695300, "ctx":"SignalHandler","msg":"Interrupted all currently running operations","attr":{"opsKilled":3}}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"TENANT_M", "id":5093807, "ctx":"SignalHandler","msg":"Shutting down all TenantMigrationAccessBlockers on global shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"COMMAND",  "id":4784913, "ctx":"SignalHandler","msg":"Shutting down all open transactions"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"REPL",     "id":4784914, "ctx":"SignalHandler","msg":"Acquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"INDEX",    "id":4784915, "ctx":"SignalHandler","msg":"Shutting down the IndexBuildsCoordinator"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"REPL",     "id":4784916, "ctx":"SignalHandler","msg":"Reacquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"REPL",     "id":4784917, "ctx":"SignalHandler","msg":"Attempting to mark clean shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"SignalHandler","msg":"Shutting down the ReplicaSetMonitor"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"SignalHandler","msg":"Shutting down the MigrationUtilExecutor"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"ASIO",     "id":22582,   "ctx":"MigrationUtil-TaskExecutor","msg":"Killing all outstanding egress activity."}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"COMMAND",  "id":4784923, "ctx":"SignalHandler","msg":"Shutting down the ServiceEntryPoint"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"CONTROL",  "id":4784925, "ctx":"SignalHandler","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"CONTROL",  "id":20609,   "ctx":"SignalHandler","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"CONTROL",  "id":4784927, "ctx":"SignalHandler","msg":"Shutting down the HealthLog"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"CONTROL",  "id":4784928, "ctx":"SignalHandler","msg":"Shutting down the TTL monitor"}
+{"t":{"$date":"2022-08-21T14:40:20.476+00:00"},"s":"I",  "c":"INDEX",    "id":3684100, "ctx":"SignalHandler","msg":"Shutting down TTL collection monitor thread"}
+{"t":{"$date":"2022-08-21T14:40:20.477+00:00"},"s":"I",  "c":"INDEX",    "id":3684101, "ctx":"SignalHandler","msg":"Finished shutting down TTL collection monitor thread"}
+{"t":{"$date":"2022-08-21T14:40:20.477+00:00"},"s":"I",  "c":"CONTROL",  "id":4784929, "ctx":"SignalHandler","msg":"Acquiring the global lock for shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.477+00:00"},"s":"I",  "c":"CONTROL",  "id":4784930, "ctx":"SignalHandler","msg":"Shutting down the storage engine"}
+{"t":{"$date":"2022-08-21T14:40:20.477+00:00"},"s":"I",  "c":"STORAGE",  "id":22320,   "ctx":"SignalHandler","msg":"Shutting down journal flusher thread"}
+{"t":{"$date":"2022-08-21T14:40:20.477+00:00"},"s":"I",  "c":"STORAGE",  "id":22321,   "ctx":"SignalHandler","msg":"Finished shutting down journal flusher thread"}
+{"t":{"$date":"2022-08-21T14:40:20.477+00:00"},"s":"I",  "c":"STORAGE",  "id":22322,   "ctx":"SignalHandler","msg":"Shutting down checkpoint thread"}
+{"t":{"$date":"2022-08-21T14:40:20.478+00:00"},"s":"I",  "c":"STORAGE",  "id":22323,   "ctx":"SignalHandler","msg":"Finished shutting down checkpoint thread"}
+{"t":{"$date":"2022-08-21T14:40:20.478+00:00"},"s":"I",  "c":"STORAGE",  "id":20282,   "ctx":"SignalHandler","msg":"Deregistering all the collections"}
+{"t":{"$date":"2022-08-21T14:40:20.478+00:00"},"s":"I",  "c":"STORAGE",  "id":22261,   "ctx":"SignalHandler","msg":"Timestamp monitor shutting down"}
+{"t":{"$date":"2022-08-21T14:40:20.478+00:00"},"s":"I",  "c":"STORAGE",  "id":22317,   "ctx":"SignalHandler","msg":"WiredTigerKVEngine shutting down"}
+{"t":{"$date":"2022-08-21T14:40:20.478+00:00"},"s":"I",  "c":"STORAGE",  "id":22318,   "ctx":"SignalHandler","msg":"Shutting down session sweeper thread"}
+{"t":{"$date":"2022-08-21T14:40:20.479+00:00"},"s":"I",  "c":"STORAGE",  "id":22319,   "ctx":"SignalHandler","msg":"Finished shutting down session sweeper thread"}
+{"t":{"$date":"2022-08-21T14:40:20.479+00:00"},"s":"I",  "c":"STORAGE",  "id":4795902, "ctx":"SignalHandler","msg":"Closing WiredTiger","attr":{"closeConfig":"leak_memory=true,"}}
+{"t":{"$date":"2022-08-21T14:40:20.480+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":"[1661092820:480238][1:0x7fcbd789d700], close_ckpt: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 15, snapshot max: 15 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 99"}}
+{"t":{"$date":"2022-08-21T14:40:20.516+00:00"},"s":"I",  "c":"STORAGE",  "id":4795901, "ctx":"SignalHandler","msg":"WiredTiger closed","attr":{"durationMillis":37}}
+{"t":{"$date":"2022-08-21T14:40:20.516+00:00"},"s":"I",  "c":"STORAGE",  "id":22279,   "ctx":"SignalHandler","msg":"shutdown: removing fs lock..."}
+{"t":{"$date":"2022-08-21T14:40:20.517+00:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"SignalHandler","msg":"Dropping the scope cache for shutdown"}
+{"t":{"$date":"2022-08-21T14:40:20.517+00:00"},"s":"I",  "c":"FTDC",     "id":4784926, "ctx":"SignalHandler","msg":"Shutting down full-time data capture"}
+{"t":{"$date":"2022-08-21T14:40:20.517+00:00"},"s":"I",  "c":"FTDC",     "id":20626,   "ctx":"SignalHandler","msg":"Shutting down full-time diagnostic data capture"}
+{"t":{"$date":"2022-08-21T14:40:20.524+00:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"SignalHandler","msg":"Now exiting"}
+{"t":{"$date":"2022-08-21T14:40:20.525+00:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"SignalHandler","msg":"Shutting down","attr":{"exitCode":0}}
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker container ls[?1l>[?2004l
+]2;docker container ls]1;dockerCONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004heexit[?1l>[?2004l
+]2;exit]1;exit
+Script done, output file is ./script-answers/exercise12_8.txt
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hscript ./script-answers/exercise12_8.txt[40Dls                                      [38Dcd ..ls   cd ..docker container ls[13D-[2Cmpose -f docker-compose.dev.yml up -d[?1l>[?2004l
+]2;docker-compose -f docker-compose.dev.yml up -d]1;docker-compose[31mERROR[0m: .FileNotFoundError: [Errno 2] No such file or directory: './docker-compose.dev.yml'
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hc ddocker cont
+[0mcontainer  -- Manage containers
+[Jcontext    -- Manage contexts[J[A[A[0m[27m[24m[47Cdocker cont[Kainer ls[?1l>[?2004l
+[J]2;docker container ls]1;dockerCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                     NAMES
+0b1cd23feb95   mongo     "docker-entrypoint.s…"   44 minutes ago   Up 17 seconds   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker kill 0b1cd23feb95[1m [0m[0m [?1l>[?2004l
+]2;docker kill 0b1cd23feb95]1;docker0b1cd23feb95
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker kill 0b1cd23feb95[17Dcontainer ls     [13D-[2Cmpose -f docker-compose.dev.yml up -d [?1l>[?2004l
+]2;docker-compose -f docker-compose.dev.yml up -d]1;docker-compose[31mERROR[0m: .FileNotFoundError: [Errno 2] No such file or directory: './docker-compose.dev.yml'
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscript t /scr    ./script-answers[1m/[0m[0m/exercise_12_8.txt[?1l>[?2004l
+]2;script ./script-answers/exercise_12_8.txt]1;scriptScript started, output file is ./script-answers/exercise_12_8.txt
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hscript ./script-answers/exercise_12_8.txt[41Ddocker-compose -f docker-compo[2C.dev.yml up -d [41D kill 0b1cd23feb95                      [22D[17Dcontainer ls     [13D-[2Cmpose -f docker-compose.dev.yml up -d[46Dexit                                          [42Ddocker container ls[12Dstart -i todo-backend_mongo_1                    mong    todo-backend_app_1[1m [0m[0m [?1l>[?2004l
+]2;docker start -i todo-backend_app_1]1;docker[31mERRO[0m[0000] error waiting for container: context canceled 
+Error response from daemon: network 3fe39f5d2702b2ecfd327f92e26be478e1956697b1f15f78e9c24c8cd85508d1 not found
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker exec mongo[?1l>[?2004l
+]2;docker exec mongo]1;docker"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004ho ddocker exe c 0b1cd23feb95[1m [0m[0m mongo[?1l>[?2004l
+]2;docker exec 0b1cd23feb95 mongo]1;dockerMongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c0e75c74-bb5d-4b25-830d-64b7da0c6cf6") }
+MongoDB server version: 5.0.11
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+bye
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker exec 0b1cd23feb95 mongo[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C -u root -p example[?1l>[?2004l
+]2;docker exec 0b1cd23feb95 mongo -u root -p example]1;dockerMongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("8f16ffeb-139f-4c2b-872c-c862f584e210") }
+MongoDB server version: 5.0.11
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+bye
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004heexit[?1l>[?2004l
+]2;exit]1;exit
+Script done, output file is ./script-answers/exercise_12_8.txt
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hnnpm install        n  bbrew install mongosh                b  c ccontainer ls         c  ddocker container ls[?1l>[?2004l
+]2;docker container ls]1;dockerCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS         PORTS                     NAMES
+0b1cd23feb95   mongo     "docker-entrypoint.s…"   51 minutes ago   Up 6 minutes   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker kill 0b1cd23feb95[1m [0m[0m [?1l>[?2004l
+]2;docker kill 0b1cd23feb95]1;docker0b1cd23feb95
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker container ls[?1l>[?2004l
+]2;docker container ls]1;dockerCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS         PORTS                     NAMES
+0b1cd23feb95   mongo     "docker-entrypoint.s…"   56 minutes ago   Up 3 minutes   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker exec todo-backend_mongo_1[1m [0m[0m mongo -u root -p pass   e  example[?1l>[?2004l
+]2;docker exec todo-backend_mongo_1 mongo -u root -p example]1;dockerMongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("03c81a27-0f43-4970-a23e-45701ac4ac9f") }
+MongoDB server version: 5.0.11
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+bye
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker exec todo-backend_mongo_1 mongo -u root -p example             "root" -p "example"[?1l>[?2004l
+]2;docker exec todo-backend_mongo_1 mongo -u "root" -p "example"]1;dockerMongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("5f022788-ca8d-440a-9999-e32e865e3583") }
+MongoDB server version: 5.0.11
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+bye
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker exec todo-backend_mongo_1 mongo -u "root" -p "example"[19Droot -p example    [15D"root" -p "example"s -u "root" -p "example"[23Dh -u "root" -p "example"[23D[?1l>[?2004l
+]2;docker exec todo-backend_mongo_1 mongosh -u "root" -p "example"]1;dockerCurrent Mongosh Log ID:	630248fa90e6d175c393e2fb
+Connecting to:		mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.4
+Using MongoDB:		5.0.11
+Using Mongosh:		1.5.4
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+   
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+   
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> [1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker exec todo-backend_mongo_1 mongosh -u "root" -p "example"[?1l>[?2004l
+]2;docker exec todo-backend_mongo_1 mongosh -u "root" -p "example"]1;dockertablesCurrent Mongosh Log ID:	6302490179fce21ff5a024ad
+Connecting to:		mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.4
+Using MongoDB:		5.0.11
+Using Mongosh:		1.5.4
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+   
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+   
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> ^R
+table   ta[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004httatab   t  docker exec todo-backend_mongo_1 mongosh -u "root" -p "example"[?1l>[?2004l
+]2;docker exec todo-backend_mongo_1 mongosh -u "root" -p "example"]1;dockert Current Mongosh Log ID:	6302490651304e72e0b0809e
+Connecting to:		mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.4
+Using MongoDB:		5.0.11
+Using Mongosh:		1.5.4
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+   
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+   
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> tables
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004httables[?1l>[?2004l
+]2;tables]1;tableszsh: command not found: tables
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker exec -it monosh    go     mongo     todo-app[1m/[0m[0m         todo-app[1m/[0m[0m    -             container ls[?1l>[?2004l
+]2;docker container ls]1;dockerCONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS          PORTS                     NAMES
+0b1cd23feb95   mongo     "docker-entrypoint.s…"   About an hour ago   Up 14 minutes   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker exec -it mongo      todo-bac end_mo      kend_mongo_1 -u root -p example[?1l>[?2004l
+]2;docker exec -it todo-backend_mongo_1 -u root -p example]1;dockerOCI runtime exec failed: exec failed: unable to start container process: exec: "-u": executable file not found in $PATH: unknown
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker exec -it todo-backend_mongo_1 -u root -p example               bash[?1l>[?2004l
+]2;docker exec -it todo-backend_mongo_1 bash]1;dockerroot@0b1cd23feb95:/# mongo -u root -p example
+MongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("2a80231d-ef92-40ce-8888-21b8a5d580b2") }
+MongoDB server version: 5.0.11
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({[3G[Jdb.todos.find({[18G
+... [5G[J[5G^C
+
+> db[3G[Jd[4G.b[3G[Jd.[5G[3G[Jd[4Gb.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("630239954b33df9c74b3c179"), "text" : "Write code", "done" : false }
+{ "_id" : ObjectId("630239954b33df9c74b3c17a"), "text" : "Learn about containers", "done" : false }
+> [3G[J[3G^C
+bye
+root@0b1cd23feb95:/# ^C
+root@0b1cd23feb95:/# exit
+exit
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscript ./script-answers[1m/[0m[0m/exercise_128.  .8.txt[?1l>[?2004l
+]2;script ./script-answers/exercise_12.8.txt]1;scriptScript started, output file is ./script-answers/exercise_12.8.txt
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker e exec -it m todo-backend_mongo_1 bash[?1l>[?2004l
+]2;docker exec -it todo-backend_mongo_1 bash]1;dockerroot@0b1cd23feb95:/# mongo -u root -p password
+MongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+root@0b1cd23feb95:/# mongo -u root -p example
+MongoDB shell version v5.0.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("d99c20db-ce14-4f12-9799-68540378577b") }
+MongoDB server version: 5.0.11
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.insertOne(<t[3G[Jdb.todos.insertOne(<[23G[3G[Jdb.todos.insertOne([22Gtodo, {}[3G[Jdb.todos.insertOne(todo, [1;34m{[0m}[29G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mt}[30G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mte}[31G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtex}[32G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext}[33G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext:}[34G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: }[35G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "}[36G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "l}[37G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "le}[38G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "lea}[39G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "lear}[40G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn}[41G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn }[42G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn t}[43G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn to}[44G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn to }[45G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn to}[44G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn t}[43G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn }[42G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn k}[43G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn ku}[44G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kub}[45G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kube}[46G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kuber}[47G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubern}[48G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kuberne}[49G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernet}[50G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernete}[51G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes}[52G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes"}[53G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes",}[54G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", }[55G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "}[56G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "d}[57G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "do}[58G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "don}[59G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done}[60G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done"}[61G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":}[62G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":f}[63G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":fa}[64G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":fal}[65G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":fals}[66G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":false}[67G[3G[Jdb.todos.insertOne[1;34m([0mtodo, {text: "learn kubernetes", "done":false}}[68G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})}[69G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})}[70G
+uncaught exception: SyntaxError: expected expression, got '}' :
+@(shell):1:65
+> [3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})}[70G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[69G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[69G
+uncaught exception: ReferenceError: todo is not defined :
+@(shell):1:1
+> [3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[69G[3G[Jdb.todos.insertOne[1;34m([0mtodo, {text: "learn kubernetes", "done":false})[68G[3G[Jdb.todos.insertOne(todo, [1;34m{[0mtext: "learn kubernetes", "done":false})[67G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[66G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[65G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[64G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[63G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[62G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[61G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[60G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[59G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[58G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[57G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[56G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[55G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[54G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[53G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[52G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[51G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[50G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[49G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[48G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[47G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[46G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[45G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[44G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[43G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[42G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[41G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[40G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[39G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[38G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[37G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[36G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[35G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[34G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[33G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[32G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[31G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[30G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[29G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false[1;34m}[0m)[28G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[27G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[26G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[25G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[24G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[23G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[22G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false}[1;34m)[0m[21G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[20G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[19G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[18G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[17G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[18G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[19G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[20G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false}[1;34m)[0m[21G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[22G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[23G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[24G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[25G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[26G[3G[Jdb.todos.insertOne(todo, {text: "learn kubernetes", "done":false})[27G[3G[Jdb.todos.insertOne(todo {text: "learn kubernetes", "done":false})[26G[3G[Jdb.todos.insertOne(tod {text: "learn kubernetes", "done":false})[25G[3G[Jdb.todos.insertOne(to {text: "learn kubernetes", "done":false})[24G[3G[Jdb.todos.insertOne(t {text: "learn kubernetes", "done":false})[23G[3G[Jdb.todos.insertOne( {text: "learn kubernetes", "done":false})[22G[3G[Jdb.todos.insertOne( {text: "learn kubernetes", "done":false})[64G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("63024a75c6732f386e58a8ec")
+}
+> db.o[3G[Jdb.[6Gtodos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("630239954b33df9c74b3c179"), "text" : "Write code", "done" : false }
+{ "_id" : ObjectId("630239954b33df9c74b3c17a"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("63024a75c6732f386e58a8ec"), "text" : "learn kubernetes", "done" : false }
+> [3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("630239954b33df9c74b3c179"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("630239954b33df9c74b3c17a"), "text" : "Learn about containers", "done" : true }
+{ "_id" : ObjectId("63024a75c6732f386e58a8ec"), "text" : "learn kubernetes", "done" : false }
+> exit[3G[Jexit[7G
+bye
+root@0b1cd23feb95:/# exit
+exit
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hdocker exec -it todo-backend_mongo_1 bash[41Dscript ./script-answers/exercise_12.8.txt[41Ddocker exec -it todo-backend_mongo_1 bash-u root -p example[48Dcontainer ls                                    [36D[19Dtables             [13Ddocker exec todo-backend_mongo_1 mongosh -u "root" -p "example"[25D[P[P[23C  [19Droot -p example    [19Dsh -u root -p example[52Dcontainer ls                                        [40D[12Dexec 0b1cd23feb95 mongosh -u root -p example[45D-compose -f docker-comp[2Ce.dev.yml u[2C-d     [46Dnpm install mongosh                           [27D[19Ddocker ki[3C0b1cd23feb95[17Dcontainer ls     [19Dexit               [15Ddocker exec 0b1cd23feb95 mongo -u root -p example[18D                  [19D[18Dmongo             [13D[10Dstart -i todo-backend_app_1[34Dscript ./script-answers/exercise[2C2_8.txt[41Ddocker start -i todo-backend_app[2C       [27Dexec mongo                 [17D0b1cd23feb95 mongo -u root -p example[49Dexit                                             [45Ddocker container ls[12Dkill 0b1cd23feb95[24Dnpm insta[3Cmongosh     [19Ddocker-compose -f docker-compose.dev.yml up -d[40D exec 0b1cd23feb95 mong[2Ch -u root -[2Cexample[44Dcontainer ls                                [32D[12Dexec todo-backend_mongo_1 mongosh -u root -p example[21D[P[P[19C  [15D"root" -p "example"[23Dsh -u "root" -p "example"[63Dtables                                                         [57Ddocker container ls[12Dexec -it todo-backend_mongo_1 -u root -p example[18Dbash              [14D[41Dscript ./script-answers/exercise_12.8.txt[41Ddocker exec -it todo-backend_mongo_1 bash[41D                                         [41Dddocker start -i rd edis            container ls[?1l>[?2004l
+]2;docker container ls]1;dockerCONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                     NAMES
+d537e8f25121   redis:alpine   "docker-entrypoint.s…"   42 minutes ago   Up 42 minutes   0.0.0.0:6379->6379/tcp    todo-backend_redis_1
+0b1cd23feb95   mongo          "docker-entrypoint.s…"   27 hours ago     Up 3 hours      0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker start -i todo-backend_app_1[1m [0m[0m      redis_1                               d  ddocker kill d537e8f25121[1m [0m[0m [?1l>[?2004l
+]2;docker kill d537e8f25121]1;dockerd537e8f25121
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hddocker     d  docker kill d537e8f25121[17Dexec -i todo-backend_redis_1 bash     bashredis-cli[9D         [10D[28Dcontainer ls                [16D[12Dexec -i redis:alpine redis-cli[30Dcontainer ls                  [18D[12Dexec -i todo-backend_redis_1 redis-cli[45Dbrew install[23P[10C                       [23D[22D[13P[9C             [13D[9Dnpm run dev[11Ddocker-compose -f docker-compose.dev.yml up -d[?1l>[?2004l
+]2;docker-compose -f docker-compose.dev.yml up -d]1;docker-compose[31mERROR[0m: .FileNotFoundError: [Errno 2] No such file or directory: './docker-compose.dev.yml'
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;31m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mdocker-test[39;49m[0m    [1m[36mscript-answers[39;49m[0m [1m[36mtodo-app[39;49m[0m       typescript
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications]1;..-applications[0m[27m[24m[J[01;32m➜  [36mpart12-containers-applications[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccd todo-app[1m/[0m[0m [?1l>[?2004l
+]2;cd todo-app]1;cd[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app]1;..ions/todo-app[0m[27m[24m[J[01;32m➜  [36mtodo-app[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mtodo-backend[39;49m[0m  [1m[36mtodo-frontend[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app]1;..ions/todo-app[0m[27m[24m[J[01;32m➜  [36mtodo-app[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hccd todo-backend[1m/[0m[0m [?1l>[?2004l
+]2;cd todo-backend]1;cd[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;lsDockerfile             [1m[36mbin[39;49m[0m                    [1m[36mmongo[39;49m[0m                  package-lock.json      [1m[36mrequests[39;49m[0m
+README.md              docker-compose.dev.yml [1m[36mmongo_data[39;49m[0m             package.json           [1m[36mroutes[39;49m[0m
+app.js                 docker-compose.yml     [1m[36mnode_modules[39;49m[0m           [1m[36mredis[39;49m[0m                  [1m[36mutil[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hlscd todo-backend[15Dls             [13Dcd todo-app[11Dls         [9Ddocker-compose -f docker-compose.dev.yml up -d[?1l>[?2004l
+]2;docker-compose -f docker-compose.dev.yml up -d]1;docker-compose[33mWARNING[0m: Found orphan containers (todo-backend_app_1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+todo-backend_mongo_1 is up-to-date
+Starting todo-backend_redis_1 ... 
+[1A[2KStarting todo-backend_redis_1 ... [32mdone[0m[1B[1m[7m%[27m[1m[0m                                                                                                                            ]2;sahindursun@sahins-mbp:~/fullstack/fs-2022/part12/part12-containers-applications/todo-app/todo-backend]1;../todo-backend[0m[27m[24m[J[01;32m➜  [36mtodo-backend[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h
