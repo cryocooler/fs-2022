@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16 
 
 WORKDIR /usr/src/app
 
@@ -9,3 +9,5 @@ RUN npm ci --only=production
 USER node
 
 CMD npm start
+
+#docker-compose -f docker-compose.dev.yml up -d

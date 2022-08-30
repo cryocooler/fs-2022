@@ -10,11 +10,19 @@ interface result {
 }
 
 interface inputs {
-    input1: Array<String>
+    input1: number,
+    input2: Array<number>
 }
-const parseArguments = (args: Array<String>) : inputs 
+const parseArguments = (args: Array<string>) : inputs => {
+    if (args.length < 4) throw new Error('Not enough arguments');
+    const arr = args.map(x => parseInt(x)).reduce((x,y) => [...x, y], [])
+    return {
+        input1: Number(arr[2]),
+        input2: arr.slice(3, arr.length)
+    }
+}
 
-const calculateExercises = (dailyHours: Array<number>, target: number) => {
+const calculateExercises = (target: number, dailyHours: Array<number>,) => {
     const trainingDays = dailyHours.filter(val => val > 0).length
     const avgHours = dailyHours.reduce((x,y) => x+y, 0)/dailyHours.length
     const success = avgHours >= target ? true : false
@@ -32,10 +40,21 @@ const calculateExercises = (dailyHours: Array<number>, target: number) => {
         average: avgHours
 
     }
-
-    return result
+    return console.log(result)
 
 
     }
 
-    console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2))
+    // console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2))
+
+
+    try {
+        const { input1, input2 } = parseArguments(process.argv);
+        calculateExercises(input1, input2)
+      } catch (error: unknown) {
+        let errorMessage = 'Something bad happened.'
+        if (error instanceof Error) {
+          errorMessage += ' Error: ' + error.message;
+        }
+        console.log(errorMessage);
+      }

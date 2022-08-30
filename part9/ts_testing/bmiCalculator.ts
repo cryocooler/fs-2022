@@ -16,3 +16,6 @@ const a = Number(process.argv[2])
 const b = Number(process.argv[3])
 
 calculateBmi(a,b)
+
+
+export default calculateBmi
