@@ -30,7 +30,7 @@ const calculateExercises = (target: number, dailyHours: Array<number>,) => {
     const ratingDescription = rating === 3 ? "Good work" : rating === 2
     ? "not too bad but could be better" :"Very poor, study harder"
 
-    const result: result = {
+    const results: result = {
         periodLength: dailyHours.length,
         trainingDays: trainingDays,
         success: success,
@@ -40,10 +40,27 @@ const calculateExercises = (target: number, dailyHours: Array<number>,) => {
         average: avgHours
 
     }
-    return console.log(result)
+    console.log('result', results)
+    return results
 
 
     }
+
+    export const parsedInputExerciseResult = (arg1: any, arg2: any[]) => {
+        if (!arg1 || arg2.length === 0) {
+            console.log('args', arg1, arg2)
+            throw "parameters missing";
+          }
+          const exercises = arg2.map((e) => parseFloat(e));
+          const target = parseFloat(arg1);
+        
+          if (Number.isNaN(target) || exercises.some((e) => isNaN(e))) {
+            throw "malformatted parameters";
+          }
+        
+          return calculateExercises(target, exercises);
+     }
+
 
     // console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2))
 
