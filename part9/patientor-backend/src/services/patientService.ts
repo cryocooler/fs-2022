@@ -1,13 +1,27 @@
-import patientData from '../../data/patients.json'
+import patientData from '../../data/patients'
 
-import { publicPatientEntry } from '../../types'
+import { Patient, publicPatientEntry, newPatientEntry } from '../../types'
 
-//const patients: Array<Patient> = patientData;
+import { v1 as uuid } from 'uuid'
+const id = uuid()
+const patients: Array<Patient> = patientData;
 const publicPatients: Array<publicPatientEntry> = patientData
 
 const getPublicEntries = () => {
     return publicPatients
     }
 
+const addPatient = (entry :newPatientEntry): Patient => {
+    const newPatientEntry = {
+        id: id,
+        ...entry
+    }
+    patients.push(newPatientEntry)
+    return newPatientEntry
+}
+     
 
-export default {getPublicEntries}
+
+
+
+export default {getPublicEntries, addPatient}
