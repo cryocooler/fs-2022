@@ -1,33 +1,10 @@
 import { Header } from "./componets/Header";
 import { Content } from "./componets/Content";
 import { Total } from "./componets/Total";
-
+import { CoursePart } from "./types";
 const App = () => {
   const courseName = "Half Stack application development";
    
-  interface CoursePartBase {
-    name: string;
-    exerciseCount: number;
-    type: string;
-  }
-  
-  interface CourseNormalPart extends CoursePartBase {
-    type: "normal";
-    description: string;
-  }
-  
-  interface CourseProjectPart extends CoursePartBase {
-    type: "groupProject";
-    groupProjectCount: number;
-  }
-  
-  interface CourseSubmissionPart extends CoursePartBase {
-    type: "submission";
-    description: string;
-    exerciseSubmissionLink: string;
-  }
-  
-  type CoursePart = CourseNormalPart | CourseProjectPart | CourseSubmissionPart;
   
   // this is the new coursePart variable
   const courseParts: CoursePart[] = [
@@ -55,6 +32,13 @@ const App = () => {
       description: "Confusing description",
       exerciseSubmissionLink: "https://fake-exercise-submit.made-up-url.dev",
       type: "submission"
+    },
+    {
+      name: "Backend development",
+      exerciseCount: 21,
+      description: "Typing the backend",
+      requirements: ["nodejs", "jest"],
+      type: "special"
     }
   ]
 
@@ -62,6 +46,7 @@ const App = () => {
     <div>
       <Header header = {courseName}/>
       <Content courses = {courseParts}/>
+      <br></br>
       <Total courses = {courseParts}/>
       
     

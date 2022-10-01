@@ -1,18 +1,15 @@
+import { CoursePart } from "../types"
+import { Part } from "./Part"
 
-interface Course {
-    name: string,
-    exerciseCount: number
+interface CoursePartsProp {
+    courses: CoursePart[]
 }
 
-interface Courses {
-    courses: Course[]
-}
-
-export const Content = ({ courses }: Courses): JSX.Element => {
+export const Content = ( {courses}: CoursePartsProp ) => {
 
     return (
         <div>
-            {courses.map(c => (<div key = {c.name}>{c.name} {c.exerciseCount}</div>
+            {courses.map(c => (<Part key = {c.name} course = {c}/>
             ))}
         </div>
         
