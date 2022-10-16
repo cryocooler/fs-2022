@@ -1,8 +1,12 @@
-import { newPatientEntry, Gender} from "./types";
+import { newPatientEntry, Gender, Entry} from "./types";
 
 const isString = (text: unknown): text is string => {
     return typeof text === 'string' || text instanceof String;
   }
+
+// const isArray = (arr : unknown): arr is Array<string> => {
+//   return arr instanceof Array<string>
+// }
 
   const parseName = (name: unknown): string => {
     if (!name || !isString(name)) {
@@ -44,25 +48,31 @@ const isString = (text: unknown): text is string => {
 
   const parseSsn = (ssn : unknown):string => {
       if (!ssn || !isString(ssn)) {
-          throw new Error('incorrect or missing ssn ' + ssn)
+          throw new Error('incorrect or missing ssn ' + ssn);
       }
-      return ssn
-  }
+      return ssn;
+  };
 
-  type Fields = { name: unknown, dateOfBirth: unknown, ssn: unknown, gender: unknown,
-                  occupation: unknown };
+  const parseEntries = (entries: any):Entry[] => {
 
-const toNewPatientEntry = ({name, dateOfBirth, ssn, gender, occupation} : Fields): newPatientEntry => {
+    return entries;
+  };
+
+  // type Fields = { name: unknown, dateOfBirth: unknown, ssn: unknown, gender: unknown,
+  //                 occupation: unknown, entries: unknown};
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const toNewPatientEntry = (object : any): newPatientEntry => {
     const newEntry : newPatientEntry = {
-        name: parseName(name),
-        dateOfBirth: parseDate(dateOfBirth),
-        ssn:  parseSsn(ssn),
-        gender: parseGender(gender),
-        occupation: parseOccupation(occupation)
+        name: parseName(object.name),
+        dateOfBirth: parseDate(object.dateOfBirth),
+        ssn:  parseSsn(object.ssn),
+        gender: parseGender(object.gender),
+        occupation: parseOccupation(object.occupation),
+        entries: parseEntries(object.entries)
 
 
-    }
-    return newEntry
-}
+    };
+    return newEntry;
+};
 
 export default toNewPatientEntry;
