@@ -58,7 +58,7 @@ export interface HealthCheckEntry extends BaseEntry {
 
 export interface HospitalEntry extends BaseEntry {
     type: "Hospital";
-    discharge: Discharge;
+    discharge?: Discharge;
   }
 
 export interface OccupationalHealthcareEntry extends BaseEntry {
@@ -71,3 +71,25 @@ export interface OccupationalHealthcareEntry extends BaseEntry {
   | HospitalEntry
   | OccupationalHealthcareEntry
   | HealthCheckEntry;
+
+  type DistributiveOmit<T, K extends keyof any> = T extends any
+  ? Omit<T, K>
+  : never;
+// Define Entry without the 'id' property
+export type NewEntry = DistributiveOmit<Entry, 'id'>;
+
+//   export interface NewEntry {
+//     date: string;
+//     type: "HealthCheck" | "OccupationalHealthcare" | "Hospital";
+//     specialist: string;
+//     description: string;
+//     diagnosisCodes?: Array<Diagnosis["code"]>;
+//     discharge?: Discharge;
+//     employerName?: string;
+//     healthCheckRating?: number;
+//     sickLeave?: SickLeave;
+//   }
+
+
+
+  //export type NewEntry = Omit<NewEntry, "id">;

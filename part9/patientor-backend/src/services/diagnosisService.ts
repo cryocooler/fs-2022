@@ -13,4 +13,4 @@ const addDiagnosis = () => {
 }
 
 
-export default {getEntries, addDiagnosis}
+export default {getEntries, addDiagnosis};

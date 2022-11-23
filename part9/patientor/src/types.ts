@@ -61,6 +61,12 @@ export interface OccupationalHealthcareEntry extends BaseEntry {
   sickLeave?: SickLeave;
 }
 
+export enum Type {
+  hospital ="Hospital",
+  healthCheck ="HealthCheck",
+  occupation = "OccupationalHealthcare",
+}
+
 export type Entry =
 | HospitalEntry
 | OccupationalHealthcareEntry
