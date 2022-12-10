@@ -39,6 +39,10 @@ export const AddEntryForm = ({ onSubmit, onCancel }: Props) => {
         specialist: "",
         type: Type.healthCheck,
         rating: "",
+        startDate: "",
+        endDate: "",
+        criteria:"",
+        dischargeDate:"",
       }}
       onSubmit={onSubmit}
       validate={(values) => {
@@ -56,13 +60,17 @@ export const AddEntryForm = ({ onSubmit, onCancel }: Props) => {
         if (!values.type) {
           errors.type = requiredError;
         }
-        if (!values.rating) {
+        if (values.type === Type.healthCheck && !values.rating) {
           errors.type = requiredError;
         }
         return errors;
       }}
     >
-      {({ isValid, dirty }) => {
+      {({ isValid, dirty, values }) => {
+       
+
+    
+
         return (
           <Form className="form ui">
             <Field
@@ -84,7 +92,41 @@ export const AddEntryForm = ({ onSubmit, onCancel }: Props) => {
               component={TextField}
             />
             <SelectField label="Type" name="type" options={typeOptions} />
-            <RatingSelectField label = "Rating" name= "rating" options = {ratingOptions} />
+            {values.type === Type.healthCheck && (
+                <RatingSelectField label="Rating" name="rating" options={ratingOptions} />
+                )}
+            {values.type === Type.occupation && (
+              <div>
+              <Field 
+              label = "start date"
+              placeholder = "start date of the sick leave"
+              name ="startDate"
+              component = {TextField}
+              />
+              <Field
+              label="end date"
+              placeholder ="end date of the sick leave"
+              name ="endDate"
+              component = {TextField}
+              />
+              </div>
+            )}
+            {values.type === Type.hospital && (
+              <div>
+                <Field
+                label = "discharge date"
+                placeholder ="date of discharge"
+                name ="dischargeDate"
+                component = {TextField}
+                />
+                <Field
+                label ="criteria"
+                placeholder ="criteria for discharge"
+                name ="discharge"
+                component = {TextField}
+                />
+              </div>
+            )}
             <Grid>
               <Grid item>
                 <Button
